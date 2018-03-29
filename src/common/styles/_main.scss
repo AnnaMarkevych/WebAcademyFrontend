@@ -3,13 +3,20 @@ body {
 }
 .page-header {
   color: white;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   margin: 1rem 0;
+
 }
 .content {
   width: 100%;
   max-width: 820px;
   @include center;
+  @include mobile {
+    position: static;
+    top: initial;
+    left: initial;
+    transform: translate(0, 0);
+  }
   &_wrapper {
     display: flex;
     flex-wrap: wrap;
