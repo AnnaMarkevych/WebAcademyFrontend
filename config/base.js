@@ -10,8 +10,19 @@ const baseConf = (_path) => {
     const VENDORS_NAME = 'vendors';
     const entry = {
         index: ['babel-polyfill', './src/index/index.js'],
-        about: ['babel-polyfill', './src/about/about.js']
-    };
+        'homework9-task1': ['./src/homework9-task1/homework9-task1.js'],
+        'homework9-task2': ['./src/homework9-task2/homework9-task2.js'],
+        'homework9-task3': ['./src/homework9-task3/homework9-task3.js'],
+        'homework9-task4': ['./src/homework9-task4/homework9-task4.js'],
+        'homework9-task5': ['./src/homework9-task5/homework9-task5.js'],
+        'homework9-task6': ['./src/homework9-task6/homework9-task6.js'],
+        'homework9-task7': ['./src/homework9-task7/homework9-task7.js'],
+        'homework9-task8': ['./src/homework9-task8/homework9-task8.js'],
+        'homework9-task9': ['./src/homework9-task9/homework9-task9.js'],
+        'homework9-task10': ['./src/homework9-task10/homework9-task10.js'],
+        'homework9-task11': ['./src/homework9-task11/homework9-task11.js'],
+        // about: ['babel-polyfill', './src/about/about.js']
+     };
 
     const plugins = Object.keys(entry).reduce((acc, name) => {
         acc.push(new HtmlWebpackPlugin({
