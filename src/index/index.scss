@@ -1,1 +1,19 @@
 @import '../common/styles/_libs';
+.parent {
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+  background: bisque;
+  padding: 5px o;
+  &_btn {
+    width: 80px;
+    background: green;
+    border: none;
+    margin-left: 60px;
+  }
+  &_block {
+    background: yellow;
+    border: 1px solid black;
+    height: 50px;
+  }
+}
