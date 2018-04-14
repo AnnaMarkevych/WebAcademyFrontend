@@ -13,17 +13,18 @@
     background: green;
     border: none;
     margin-left: 60px;
+    outline: inherit;
   }
   &_block {
     background: yellow;
     border: 1px solid black;
     height: 50px;
-    transform: scaleY(1);
+    transform: scaleY(0);
     transition: transform 0.5s;
     transform-origin: top;
     //display: block;
   }
 }
 .hidden {
-  transform: scaleY(0);
+  transform: scaleY(1);
 }
