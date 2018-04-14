@@ -4,7 +4,10 @@ widget("#parentSecond");
 
 function widget(selectorId) {
     let rootElement = document.querySelector(selectorId);
-    let btn = rootElement.querySelector(".parent_btn");
+    let btn = document.createElement("div");
+    btn.classList.add("parent_btn");
+    btn.textContent = 'on/off';
+    rootElement.appendChild(btn);
     let block = rootElement.querySelector(".parent_block");
 
     btn.onclick = toggle;
