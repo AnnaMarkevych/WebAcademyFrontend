@@ -2,9 +2,10 @@
 .parent {
   position: relative;
   width: 200px;
+  height: 100px;
   margin: 0 auto;
   background: bisque;
-  padding: 5px o;
+  padding: 5px 0;
   &_btn {
     width: 80px;
     background: green;
@@ -15,8 +16,12 @@
     background: yellow;
     border: 1px solid black;
     height: 50px;
+    transform: scaleY(1);
+    transition: transform 0.5s;
+    transform-origin: top;
+    //display: block;
   }
 }
 .hidden {
-display: none;
+  transform: scaleY(0);
 }
