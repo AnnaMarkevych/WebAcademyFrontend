@@ -1,10 +1,15 @@
 import './index.scss';
-let rootElement = document.querySelector(".parent");
-let btn = rootElement.querySelector(".parent_btn");
-let block = rootElement.querySelector(".parent_block");
+widget("#parentFirst");
+// widget("#parentSecond");
 
-btn.onclick = toggle;
+function widget(selecterId) {
+    let rootElement = document.querySelector(selectorId);
+    let btn = rootElement.querySelector(".parent_btn");
+    let block = rootElement.querySelector(".parent_block");
 
-function toggle() {
-    block.classList.toggle("hidden");
+    btn.onclick = toggle;
+
+    function toggle() {
+        block.classList.toggle("hidden");
+    }
 }
