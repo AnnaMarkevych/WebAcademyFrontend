@@ -12,7 +12,7 @@ lampGreen.onclick = lightGreen;
 tumbler.onclick = tumblerOn;
 
 function lightRed() {
-    if (flag === true) {
+    if (flag) {
         lampRed.classList.toggle("lightRed");
         lampYellow.classList.remove("lightYellow");
         lampGreen.classList.remove("lightGreen");
@@ -20,7 +20,7 @@ function lightRed() {
 }
 
 function lightYellow() {
-    if (flag === true) {
+    if (flag) {
         lampYellow.classList.toggle("lightYellow");
         lampRed.classList.remove("lightRed");
         lampGreen.classList.remove("lightGreen");
@@ -28,7 +28,7 @@ function lightYellow() {
 }
 
 function lightGreen() {
-    if (flag === true) {
+    if (flag) {
         lampGreen.classList.toggle("lightGreen");
         lampRed.classList.remove("lightRed");
         lampYellow.classList.remove("lightYellow");
@@ -39,8 +39,10 @@ function tumblerOn() {
     tumbler.classList.toggle("tumblerOn");
     if (tumbler.classList.contains("tumblerOn")) {
         flag = true;
+        tumbler.innerHTML = "on";
     } else {
         flag = false;
+        tumbler.innerHTML = "off";
         lampRed.classList.remove("lightRed");
         lampYellow.classList.remove("lightYellow");
         lampGreen.classList.remove("lightGreen");
