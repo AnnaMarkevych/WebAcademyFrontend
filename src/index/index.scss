@@ -1,42 +1,55 @@
 @import '../common/styles/_libs';
-.lamp {
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
-  border-radius: 50%;
-  margin: 5px auto;
-  background: slategray;
-}
-.lightRed {
-  background: red;
-}
-.lightYellow {
-  background: yellow;
-}
-.lightGreen {
-  background: green;
-}
-.globalLamp {
-  border: 1px solid black;
-  height: 205px;
-  width: 80px;
-  display: inline-block;
+$colorRed: red;
+$colorYellow: yellow;
+$colorGreen: green;
+$colorGray: gray;
+$colorSlategray: slategray;
+$colorimgrey: dimgrey;
+$colorWhite: white;
+$colorBlack: black;
+$borderRadiusLamp: 50%;
+
+@mixin borderRadius {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background: dimgrey;
+}
+@mixin lampSize {
+  width: 50px;
+  height: 50px;
+}
+
+.lamp {
+  @include lampSize;
+  border: 1px solid $colorBlack;
+  border-radius: $borderRadiusLamp;
+  margin: 5px auto;
+  background: $colorSlategray;
+}
+.lampRed.enabled {
+  background: $colorRed;
+}
+.lampYellow.enabled {
+  background: $colorYellow;
+}
+.lampGreen.enabled {
+  background: $colorGreen;
+}
+.globalLamp {
+  border: 1px solid $colorBlack;
+  height: 205px;
+  width: 80px;
+  display: inline-block;
+  background: $colorimgrey;
   margin-top: 10px;
-  //position: absolute;
-  //top: 50%;
-  //left: 50%;
-  //transform: translate(-50%,-50%);
+  @include borderRadius;
 }
 .tumbler {
   width: 70px;
   height: 20px;
-  color: white;
-  background: gray;
+  color: $colorWhite;
+  background: $colorGray;
   cursor: pointer;
   margin: 5px auto;
   text-align: center;
@@ -44,5 +57,5 @@
   padding-top: 3px;
 }
 .tumblerOn {
-  background: green;
+  background: $colorGreen;
 }

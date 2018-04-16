@@ -1,62 +1,53 @@
 import './index.scss';
 
-widgetTrafficLight("#firstTrafficLight");
-widgetTrafficLight("#secondTrafficLight");
-widgetTrafficLight("#thirdTrafficLight");
-widgetTrafficLight("#foursTrafficLight");
-widgetTrafficLight("#fivesTrafficLight");
+const globalLamps = document.querySelectorAll(".globalLamp");
+globalLamps.forEach((globalLamp) => {
+   widgetTrafficLight(globalLamp);
+});
 
 
-function widgetTrafficLight(selectorId) {
-    let rootElement = document.querySelector(selectorId);
-    let lampRed = rootElement.querySelector(".lampRed");
-    let lampYellow = rootElement.querySelector(".lampYellow");
-    let lampGreen = rootElement.querySelector(".lampGreen");
+function widgetTrafficLight(rootElement) {
+    let lamps = rootElement.querySelectorAll(".lamp");
     let tumbler = rootElement.querySelector(".tumbler");
-
     let flag = false;
 
-    lampRed.onclick = lightRed;
-    lampYellow.onclick = lightYellow;
-    lampGreen.onclick = lightGreen;
     tumbler.onclick = tumblerOn;
 
-    function lightRed() {
+    lamps.forEach((item) => {
+        item.onclick = mouseClick;
+    });
+
+    function mouseClick(event) {
         if (flag) {
-            lampRed.classList.toggle("lightRed");
-            lampYellow.classList.remove("lightYellow");
-            lampGreen.classList.remove("lightGreen");
+            const lamp = event.target;
+            let wasLampEnabled = lamp.classList.contains("enabled");
+
+            disableAllLamps();
+
+            if (!wasLampEnabled) {
+                lamp.classList.add("enabled");
+            }
         }
     }
 
-    function lightYellow() {
-        if (flag) {
-            lampYellow.classList.toggle("lightYellow");
-            lampRed.classList.remove("lightRed");
-            lampGreen.classList.remove("lightGreen");
-        }
-    }
-
-    function lightGreen() {
-        if (flag) {
-            lampGreen.classList.toggle("lightGreen");
-            lampRed.classList.remove("lightRed");
-            lampYellow.classList.remove("lightYellow");
-        }
-    }
 
     function tumblerOn() {
         tumbler.classList.toggle("tumblerOn");
         if (tumbler.classList.contains("tumblerOn")) {
             flag = true;
-            tumbler.innerHTML = "on";
+            tumbler.innerHTML = "On";
         } else {
             flag = false;
-            tumbler.innerHTML = "off";
-            lampRed.classList.remove("lightRed");
-            lampYellow.classList.remove("lightYellow");
-            lampGreen.classList.remove("lightGreen");
+            tumbler.innerHTML = "Off";
+
+            disableAllLamps();
         }
+    }
+
+    function disableAllLamps() {
+        lamps.forEach((item) => {
+            item.classList.remove("enabled");
+        });
     }
 }
 
