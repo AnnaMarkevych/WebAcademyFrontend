@@ -2,12 +2,14 @@
 $colorRed: red;
 $colorYellow: yellow;
 $colorGreen: green;
+$colorDarkgray: darkgray;
 $colorGray: gray;
 $colorSlategray: slategray;
-$colorimgrey: dimgrey;
+$colorDimgrey: dimgrey;
 $colorWhite: white;
 $colorBlack: black;
 $borderRadiusLamp: 50%;
+$colorLightslategray: lightslategray;
 
 @mixin borderRadius {
   border-bottom-left-radius: 5px;
@@ -18,6 +20,14 @@ $borderRadiusLamp: 50%;
 @mixin lampSize {
   width: 50px;
   height: 50px;
+}
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+@mixin borderBasis {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 .lamp {
@@ -40,9 +50,8 @@ $borderRadiusLamp: 50%;
   border: 1px solid $colorBlack;
   height: 205px;
   width: 80px;
-  display: inline-block;
-  background: $colorimgrey;
-  margin-top: 10px;
+  background: $colorDimgrey;
+  margin: 10px 10px;
   @include borderRadius;
 }
 .tumbler {
@@ -55,7 +64,38 @@ $borderRadiusLamp: 50%;
   text-align: center;
   font-size: 14px;
   padding-top: 3px;
+  @include borderRadius;
 }
 .tumblerOn {
-  background: $colorGreen;
+  background: $colorDarkgray;
 }
+.stanchion {
+  height: 300px;
+  width: 10px;
+  background: $colorLightslategray;
+  margin-left: 45px;
+  margin-right: 45px;
+  margin-top: -10px;
+  border: 1px solid $colorBlack;
+  border-top: none;
+}
+.main {
+  @include flexRow;
+}
+.stanchions {
+  @include flexRow;
+}
+.main-basis {
+  @include flexRow;
+}
+  .basis {
+    background:$colorDimgrey;
+    height: 15px;
+    width: 80px;
+    margin-right: 12px;
+    margin-left: 10px;
+    margin-top: -1px;
+    color: darkgray;
+    @include borderBasis;
+  }
+
