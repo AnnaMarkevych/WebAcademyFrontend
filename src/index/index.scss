@@ -1,30 +1,29 @@
 @import '../common/styles/_libs';
-.parent {
-  position: relative;
-  width: 200px;
-  height: 100px;
-  //margin: 0 auto;
-  background: bisque;
-  padding: 5px 0;
-  border: 1px solid black;
-  display: inline-block;
-  &_btn {
-    width: 80px;
-    background: green;
-    border: none;
-    margin-left: 60px;
-    outline: inherit;
-  }
-  &_block {
-    background: yellow;
-    border: 1px solid black;
-    height: 50px;
-    transform: scaleY(0);
-    transition: transform 0.5s;
-    transform-origin: top;
-    //display: block;
-  }
+$widthAccordion: 300px;
+* {
+  box-sizing: border-box;
 }
-.hidden {
-  transform: scaleY(1);
+ul,li {
+  list-style: none;
+  margin: 0;
+}
+.accordion {
+
+&-btn-header {
+  width: $widthAccordion;
+  padding: 1rem 1rem;
+  text-align: right;
+  color: white;
+  background: blue;
+  outline: inherit;
+  border: none;
+  font-size: 1.2rem;
+
+}
+&-description {
+  background: white;
+  width: $widthAccordion;
+  transform: scaleY(0);
+  transition: transform 0.5s;
+}
 }
