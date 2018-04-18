@@ -1,10 +1,11 @@
 import './index.scss';
+dropdown();
 function dropdown() {
     let rootElement = document.querySelector(".accordion");
     let accordionItem = rootElement.querySelector(".accordion-btn-header");
 
     accordionItem.addEventListener("click", () => {
-        toggle;
+        toggle();
     });
 
     function toggle() {
