@@ -2,13 +2,23 @@ import './index.scss';
 dropdown();
 function dropdown() {
     let rootElement = document.querySelector(".accordion");
-    let accordionItem = rootElement.querySelector(".accordion-btn-header");
+    let el = rootElement.querySelector(".accordion-btn-header");
+    // let description = rootElement.querySelector(".description");
 
-    accordionItem.addEventListener("click", () => {
-        toggle();
+    let flag = el.classList.contains(".opened");
+
+    el.addEventListener("click", () => {
+        if (flag) {
+            close();
+        } else {
+            open();
+        }
     });
 
-    function toggle() {
-        accordionItem.classList.add("opened");
+    function open() {
+        el.classList.add(".opened");
+    }
+    function close() {
+        el.classList.remove(".opened");
     }
 }

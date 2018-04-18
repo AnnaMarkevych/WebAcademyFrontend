@@ -8,26 +8,38 @@ ul,li {
   margin: 0;
 }
 .accordion {
-
+  display: flex;
+  flex-direction: column;
+  //position: relative;
+  &-btns {
+    display: flex;
+    flex-direction: column;
+  }
 &-btn-header {
   width: $widthAccordion;
   padding: 1rem 1rem;
   text-align: right;
   color: white;
   background: blue;
-  outline: inherit;
+  //outline: inherit;
   border: none;
   font-size: 1.2rem;
-  &.opened {
+  cursor: pointer;
+  &:hover {
+    background: darkblue;
+  }
+}
+&-description {
+  //position: absolute;
+  background: white;
+  width: $widthAccordion;
+  transform: scaleY(0);
+  transition: transform 5s;
+  transform-origin: top;
+}
+  .opened {
     .accordion-description {
       transform: scaleY(1);
     }
   }
-}
-&-description {
-  background: white;
-  width: $widthAccordion;
-  transform: scaleY(0);
-  transition: transform 0.5s;
-}
 }
