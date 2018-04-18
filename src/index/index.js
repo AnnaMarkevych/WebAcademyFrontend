@@ -1,29 +1,30 @@
 import './index.scss';
-// dropdown();
-// function dropdown() {
-//     let rootElement = document.querySelector(".accordion");
-//     let el = rootElement.querySelector(".accordion-btn-header");
-//     // let description = rootElement.querySelector(".description");
-//
-//     let flag = el.classList.contains("opened");
-//
-//     function toggle () {
-//         el.addEventListener("click", () => {
-//             if (flag) {
-//                 close();
-//             } else {
-//                 open();
-//             }
-//         });
-//     }
-//     toggle();
-//
-//     function open() {
-//         flag = true;
-//         el.classList.add("opened");
-//     }
-//     function close() {
-//         flag = false;
-//         el.classList.remove("opened");
-//     }
-// }
+dropdown("#headerFirst");
+dropdown("#headerSecond");
+
+function dropdown(SelectorId) {
+    let rootElement = document.querySelector(SelectorId);
+    let description = rootElement.querySelector(".accordion-description");
+
+    let flag = description.classList.contains("opened");
+
+    function toggle () {
+        el.addEventListener("click", () => {
+            if (flag) {
+                close();
+            } else {
+                open();
+            }
+        });
+    }
+    toggle();
+
+    function open() {
+        flag = true;
+        description.classList.add("opened");
+    }
+    function close() {
+        flag = false;
+        description.classList.remove("opened");
+    }
+}
