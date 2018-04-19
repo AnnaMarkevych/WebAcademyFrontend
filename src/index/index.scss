@@ -40,7 +40,7 @@ ul,li {
   width: $widthAccordion;
   transform: scaleY(0);
   overflow: hidden;
-  transition: transform 2s;
+  transition: transform 0.5s;
   transform-origin: top;
 }
 }
