@@ -21,7 +21,7 @@ ul,li {
   text-align: right;
   color: $colorWhite;
   background: $colorBlue;
-  //outline: inherit;
+  outline: inherit;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
@@ -39,14 +39,13 @@ ul,li {
   background: white;
   width: $widthAccordion;
   transform: scaleY(0);
+  overflow: hidden;
   transition: transform 2s;
   transform-origin: top;
 }
 }
-.opened {
-   // transform: scaleY(1);
-}
 .accordion-btn-header.opened + .accordion-description {
   transform: scaleY(1);
   position: relative;
+  height: 100%;
 }
