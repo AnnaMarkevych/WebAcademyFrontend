@@ -1,5 +1,8 @@
 @import '../common/styles/_libs';
 $widthAccordion: 300px;
+$colorDarkblue: darkblue;
+$colorBlue: blue;
+$colorWhite: white;
 * {
   box-sizing: border-box;
 }
@@ -10,28 +13,30 @@ ul,li {
 .accordion {
   display: flex;
   flex-direction: column;
-  //position: relative;
-  &-btns {
-    display: flex;
-    flex-direction: column;
-  }
+  position: relative;
 &-btn-header {
+  position: relative;
   width: $widthAccordion;
   padding: 1rem 1rem;
   text-align: right;
-  color: white;
-  background: blue;
+  color: $colorWhite;
+  background: $colorBlue;
   //outline: inherit;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  &:hover {
-    background: darkblue;
+  display: block;
+  &:focus {
+    background: $colorDarkblue;
   }
+  &:hover{
+    background: $colorDarkblue;
+  }
+
 }
 &-description {
-  //position: relative;
-  //background: white;
+  position: absolute;
+  background: white;
   width: $widthAccordion;
   transform: scaleY(0);
   transition: transform 2s;
@@ -39,5 +44,9 @@ ul,li {
 }
 }
 .opened {
-    transform: scaleY(1);
+   // transform: scaleY(1);
+}
+.accordion-btn-header.opened + .accordion-description {
+  transform: scaleY(1);
+  position: relative;
 }
