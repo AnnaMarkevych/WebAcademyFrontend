@@ -16,10 +16,10 @@ function dynamicDropdown(optionList) {
       accordion.appendChild(button);
       button.textContent = obj.tittle;
 
-      let discription = document.createElement("div");
-      discription.classList.add("accordion-description");
-      accordion.appendChild(discription);
-      discription.textContent = obj.description;
+      let description = document.createElement("div");
+      description.classList.add("accordion-description");
+      accordion.appendChild(description);
+      description.textContent = obj.description;
   })
 }
 
@@ -54,8 +54,10 @@ document.querySelectorAll(".accordion-btn-header").forEach((item) => {
 });
 
 
+
 function dropdown(element) {
     element.addEventListener("click", (event) => {
         event.target.classList.toggle("opened");
+        console.log (event);
     });
 }
