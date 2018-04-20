@@ -49,15 +49,20 @@ const accordionList = [
 
 
 dynamicDropdown(accordionList);
-document.querySelectorAll(".accordion-btn-header").forEach((item) => {
+const allButtons = document.querySelectorAll(".accordion-btn-header");
+allButtons.forEach((item) => {
     dropdown(item);
 });
 
 
-
 function dropdown(element) {
     element.addEventListener("click", (event) => {
-        event.target.classList.toggle("opened");
-        console.log (event);
+        allButtons.forEach((item) => {
+            if (item === event.target) {
+                item.classList.toggle("opened");
+            } else {
+                item.classList.remove("opened");
+            }
+        });
     });
 }
