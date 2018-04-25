@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  font-size: 14px;
+}
 body,h1,h2,h3,h4,p,ol,ul,li {
   padding: 0;
   margin: 0;
@@ -11,3 +14,4 @@ ol,ul,li {
 a {
   text-decoration: none;
 }
+
