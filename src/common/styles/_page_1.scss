@@ -1,74 +1,77 @@
-.banner {
+$pageContentLinearColor: #f3f1ef4f;
+$boxShadowMainBanner: #6e6e6b6b;
+$menuColor: #e7e6e1;
+$bgShadow: #7f7873bf;
+$titleTextColor: #f5f5f6;
+
+.main-banner {
   background-image: url("../../assets/img/baner.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 100vh;
-  .overlay {
+  box-shadow: inset 0 4rem 0 0 $boxShadowMainBanner;
+  //background: radial-gradient(at center, black, transparent);
+  .page-content {
+    max-width: 1200px;
+    min-width: 700px;
     height: 100vh;
     margin: 0 auto;
-    width: 100vw;
+    width: 100%;
     background: repeating-linear-gradient(
                     to right,
                     transparent,
                     transparent 20px,
-                    #f3f3f338 20px,
-                    #f3f3f338 100px);
-  }
-  .menu {
-    width: 100%;
-    background: #6262619e;
-    //position: relative;
-    &-page-header {
-      max-width: 1200px;
-      min-width: 700px;
-      margin: 0 auto;
+                    $pageContentLinearColor 20px,
+                    $pageContentLinearColor 100px);
+    .menu {
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: baseline;
       padding: 1rem 0;
-      //opacity: revert;
       &-logo {
-        //padding: 0 1rem;
-        cursor: pointer;
+        padding: 0 1rem;
+        //cursor: pointer;
         align-items: center;
-        color: #e7e6e1;
+        color: $menuColor;
         font-family: "Scriptina";
-        font-size: 2rem;
-        line-height: 1em;
+        font-size: 2.5rem;
+        line-height: 0.6em;
       }
-      &-nav {
+      &-page {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         text-transform: uppercase;
         &-item {
-          padding: 1rem;
+          padding: 0.5rem 1rem;
           align-items: center;
           color: #e7e6e1;
           &:nth-child(odd):hover {
-            transform: scale(1.1, 1.1);
-            transition: transform 0.5s;
+            transform: scale(1.2, 1.2);
+            transition: transform 0.3s;
           }
         }
-        .nav-link {
+        .menu-link {
           color: #e7e6e1;
           cursor: pointer;
           font-family: "Alegreya Regular", sans-serif;
+          font-size: 1.2rem;
           letter-spacing: 0.3em;
         }
       }
       &-networks {
-        padding: 0 1rem;
+        //padding: 0 1rem;
         cursor: pointer;
         align-items: center;
         color: white;
         display: flex;
         flex-direction: row;
         :hover {
-          transform: scale(1.1, 1.1);
+          transform: scale(1.2, 1.2);
+          transition: transform 0.3s;
         }
       }
       &-networks > img {
@@ -77,24 +80,167 @@
         margin: 0 1rem;
       }
     }
-  }
-  &-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    text-align: center;
-    &-header {
-      font-size: 7rem;
-      color: white;
-      font-family: "Playfair Display Bold";
-    }
-    &-content {
-      color: white;
-      font-size: 2rem;
-      font-family: "Alegreya Regular";
-      font-stretch: ultra-condensed;
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      text-align: center;
+      //border: 2px solid red;
+      background: radial-gradient(at center, $bgShadow, transparent);
+      &-header {
+        font-size: 6rem;
+        letter-spacing: 0.06em;
+        padding: 1rem;
+        color: $titleTextColor;
+        font-family: "Playfair Display Bold";
+      }
+      &-line {
+        //padding: 1rem;
+      }
+      &-subscription {
+        color: $titleTextColor;
+        font-size: 1.5rem;
+        line-height: 1.5em;
+        font-family: "ProximaNova Regular";
+        letter-spacing: 0.1em;
+        padding: 6rem;
+      }
+      &-btn {
+        padding: 1rem 3rem;
+        border: 1px solid $titleTextColor;
+        font-family: "Alegreya Bold";
+        font-size: 1.2rem;
+        letter-spacing: 0.2em;
+        color: $titleTextColor;
+        text-transform: uppercase;
+        border-style: dashed;
+        background: $boxShadowMainBanner;
+        outline: inherit;
+        &:hover {
+          //background: #a09e9cc2;
+          transform: scale(1.1, 1.1);
+          transition: transform 0.3s;
+        }
+        //&-link {
+        //
+        //}
+      }
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+//.banner {
+//  background-image: url("../../assets/img/baner.jpg");
+//  background-repeat: no-repeat;
+//  background-position: center;
+//  background-size: cover;
+//  height: 100vh;
+//  .overlay {
+//    height: 100vh;
+//    margin: 0 auto;
+//    width: 100vw;
+//    background: repeating-linear-gradient(
+//                    to right,
+//                    transparent,
+//                    transparent 20px,
+//                    #f3f1ef4f 20px,
+//                    #f3f1ef4f 100px);
+//  }
+//  .menu {
+//    width: 100%;
+//    background: #94928f99;
+//    //position: relative;
+//    &-page-header {
+//      max-width: 1200px;
+//      min-width: 700px;
+//      margin: 0 auto;
+//      width: 100%;
+//      display: flex;
+//      flex-direction: row;
+//      justify-content: space-between;
+//      align-items: baseline;
+//      padding: 1rem 0;
+//      //opacity: revert;
+//      &-logo {
+//        //padding: 0 1rem;
+//        cursor: pointer;
+//        align-items: center;
+//        color: #e7e6e1;
+//        font-family: "Scriptina";
+//        font-size: 2rem;
+//        line-height: 0.6em;
+//      }
+//      &-nav {
+//        display: flex;
+//        flex-direction: row;
+//        justify-content: space-between;
+//        text-transform: uppercase;
+//        &-item {
+//          padding: 0.5rem 1rem;
+//          align-items: center;
+//          color: #e7e6e1;
+//          &:nth-child(odd):hover {
+//            transform: scale(1.2, 1.2);
+//            transition: transform 0.3s;
+//          }
+//        }
+//        .nav-link {
+//          color: #e7e6e1;
+//          cursor: pointer;
+//          font-family: "Alegreya Regular", sans-serif;
+//          letter-spacing: 0.3em;
+//        }
+//      }
+//      &-networks {
+//        padding: 0 1rem;
+//        cursor: pointer;
+//        align-items: center;
+//        color: white;
+//        display: flex;
+//        flex-direction: row;
+//        :hover {
+//          transform: scale(1.2, 1.2);
+//          transition: transform 0.3s;
+//        }
+//      }
+//      &-networks > img {
+//        width: 100%;
+//        display: block;
+//        margin: 0 1rem;
+//      }
+//    }
+//  }
+//  &-text {
+//    position: absolute;
+//    top: 50%;
+//    left: 50%;
+//    transform: translate(-50%, -50%);
+//    width: 800px;
+//    text-align: center;
+//    &-header {
+//      font-size: 6rem;
+//      letter-spacing: 0.06em ;
+//      color: #f5f5f6;
+//      font-family: "Playfair Display Bold";
+//    }
+//    &-content {
+//      color: white;
+//      font-size: 1.5rem;
+//      font-family: "Proxima Nova Condensed Regular";
+//      //font-family: "Sripalt";
+//      font-stretch: ultra-expanded;
+//      letter-spacing: 0.15em;
+//    }
+//  }
+//}
