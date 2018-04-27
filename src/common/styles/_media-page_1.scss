@@ -48,9 +48,6 @@
       .menu {
         align-items: center;
         padding: 0.5rem 0;
-        //.opened .menu-page {
-        //  transform: translateY(100%);
-        //}
         &-burger {
           display: flex;
           flex-direction: column;
@@ -70,16 +67,16 @@
         &-page {
           transform: scaleY(0);
           transform-origin: top;
-          transition: transform 0.3s;
+          transition: transform 1s;
           flex-direction: column;
           justify-content: space-around;
           position: absolute;
-          top: 4rem;
+          top: 0;
           z-index: 2;
-          background: $boxShadowMainBanner;
-          width: 80vw;
+          background: #0e0e0eba;
+          width: 100vw;
           //height: calc(100vh-45.4px);
-          height: 80vh;
+          height: 100vh;
           &-item {
             &:nth-child(even) {
               display: none;
@@ -106,4 +103,7 @@
  .menu.opened .menu-page {
    transform: scaleY(1);
  }
+  .menu.opened .test-block {
+    transform: scaleY(1);
+  }
 }
