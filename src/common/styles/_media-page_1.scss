@@ -69,17 +69,20 @@
           transform-origin: top;
           transition: transform 1s;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: space-between;
           position: absolute;
-          top: 0;
+          top: 4rem;
           z-index: 2;
           background: #0e0e0eba;
           width: 100vw;
-          //height: calc(100vh-45.4px);
-          height: 100vh;
+          height: 50%;
           &-item {
+            padding: 1rem 3rem;
             &:nth-child(even) {
               display: none;
+            }
+            &:hover {
+              @include hoverBtn;
             }
           }
           .menu-link {
@@ -95,7 +98,7 @@
           font-size: 3rem;
         }
         &-subscription {
-          //font-size: 2rem;
+          font-size: 1rem;
         }
       }
     }
