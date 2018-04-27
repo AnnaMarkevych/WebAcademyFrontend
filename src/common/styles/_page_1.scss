@@ -51,6 +51,9 @@ $titleTextColor: #f5f5f6;
       justify-content: space-between;
       align-items: baseline;
       padding: 1rem 0;
+      &-burger {
+        display: none;
+      }
       &-logo {
         padding: 0 1rem;
         align-items: center;
