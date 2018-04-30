@@ -1,12 +1,19 @@
 import './index.scss';
-widget();
-function widget() {
-    let btnBurger = document.querySelector(".menu-burger");
-    let menu = document.querySelector(".menu");
+let menu = document.querySelector(".menu");
+let body = document.querySelector("body");
 
-    btnBurger.addEventListener("click",toggle);
+dropDownWidget(menu);
 
-    function toggle() {
-        menu.classList.toggle("opened")
-    }
+function dropDownWidget(menu) {
+    let btnBurger = menu.querySelector(".menu-burger");
+
+    btnBurger.addEventListener("click", () => {
+        menu.classList.toggle("opened");
+        event.stopPropagation();
+    });
+
+
+    // body.addEventListener("click", () => {
+    //     menu.classList.remove("opened");
+    // })
 }
