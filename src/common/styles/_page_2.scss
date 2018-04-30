@@ -5,15 +5,23 @@ $quotesColor: #c3c3c3;
 $page2ContentLinearColor: #f4f4f4;
 $descriptionColor: #888783;
 
+@mixin rightContentImg {
+  align-items: center;
+  //margin: 1rem;
+  width: 100%;
+  height: 40%;
+}
+
 
 
 .page-second {
-  height: 100vh;
+  height: 90vh;
   background-image: url("../../assets/img/page-second/texture.jpg");
   .page-content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 90vh;
     background: repeating-linear-gradient(
                     to right,
                     transparent,
@@ -23,12 +31,12 @@ $descriptionColor: #888783;
     .left-content {
       height: 100%;
       text-align: center;
-      padding: 0 5rem;
+      padding: 0 4rem;
       .content-header {
         font-family: "Alegreya Bold";
         font-size: 4rem;
         color: $headerColor;
-        padding-top: 2rem;
+        padding-top: 3rem;
       }
       .content-header-subscription {
         text-transform: uppercase;
@@ -50,7 +58,7 @@ $descriptionColor: #888783;
         font-family: "Alegreya Bold";
         color: $headerColor;
         font-size: 2rem;
-        padding: 2rem 0;
+        padding: 1.5rem 0;
       }
       .chef {
         display: flex;
@@ -72,6 +80,7 @@ $descriptionColor: #888783;
           background-image: url("../../assets/img/page-second/avatar.jpg");
           background-size: 250%;
           background-position-x: -40px;
+          margin: 1rem;
         }
       }
       .quotes {
@@ -94,11 +103,36 @@ $descriptionColor: #888783;
         text-align: left;
       }
     }
-
-
     .right-content {
-      background: red;
       height: 100%;
+      //flex-wrap: wrap;
+      //align-items: center;
+      //.wrapper {
+      //    width: 100%;
+      //    display: flex;
+      //    flex-direction: row;
+      //    .top-left {
+      //      @include rightContentImg;
+      //      @include bgBanner;
+      //      background-image: url("../../assets/img/page-second/top-left.jpg");
+      //    }
+      //    .top-right {
+      //      @include rightContentImg;
+      //      @include bgBanner;
+      //      background-image: url("../../assets/img/page-second/top-right.jpg");
+      //    }
+      //  }
+      //  .bottom-left {
+      //    @include rightContentImg;
+      //    @include bgBanner;
+      //    background-image: url("../../assets/img/page-second/bottom-left.jpg");
+      //  }
+      //  .bottom-right {
+      //    @include rightContentImg;
+      //    @include bgBanner;
+      //    background-image: url("../../assets/img/page-second/bottom-right.jpg");
+      //  }
+      //}
     }
   }
 }
