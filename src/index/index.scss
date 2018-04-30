@@ -1,1 +1,13 @@
 @import '../common/styles/_libs';
+.test {
+  background: green;
+  width: 100px;
+  height: 100px;
+  transform: scaleY(0.5);
+}
+.open {
+  transform: scaleY(1);
+}
+.close {
+  transform: scaleY(0.1);
+}
