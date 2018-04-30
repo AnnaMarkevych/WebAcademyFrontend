@@ -40,145 +40,132 @@ $titleTextColor: #f5f5f6;
   @include bgBanner;
   height: 100vh;
   box-shadow: inset 0 4rem 0 0 $boxShadowMainBanner;
-  .page-content {
-    @include pageContent;
-    background: repeating-linear-gradient(
-                    to right,
-                    transparent,
-                    transparent 20px,
-                    $pageContentLinearColor 20px,
-                    $pageContentLinearColor 100px);
-    .menu {
-      width: 100%;
+}
+.page-content {
+  @include pageContent;
+  background: repeating-linear-gradient(
+                  to right,
+                  transparent,
+                  transparent 20px,
+                  $pageContentLinearColor 20px,
+                  $pageContentLinearColor 100px);
+  .menu {
+    width: 100%;
+    @include flexRow;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 0;
+    &-burger {
+      display: none;
+    }
+    &-logo {
+      padding: 0 1rem;
+      align-items: center;
+      color: $menuColor;
+      font-family: "Scriptina";
+      font-size: 2.5rem;
+      line-height: 0.6em;
+    }
+    &-page {
       @include flexRow;
       justify-content: space-between;
-      align-items: baseline;
-      padding: 1rem 0;
-      &-burger {
-        display: none;
-      }
-      &-logo {
-        padding: 0 1rem;
+      text-transform: uppercase;
+      &-item {
+        padding: 0.5rem 1rem;
         align-items: center;
-        color: $menuColor;
-        font-family: "Scriptina";
-        font-size: 2.5rem;
-        line-height: 0.6em;
-      }
-      &-page {
-        @include flexRow;
-        justify-content: space-between;
-        text-transform: uppercase;
-        &-item {
-          padding: 0.5rem 1rem;
-          align-items: center;
-          color: #e7e6e1;
-          &:nth-child(odd):hover {
-           @include hoverTransform;
-          }
-        }
-        .menu-link {
-          color: #e7e6e1;
-          cursor: pointer;
-          font-family: "Alegreya Regular", sans-serif;
-          font-size: 1.2rem;
-          letter-spacing: 0.3em;
+        color: #e7e6e1;
+        &:nth-child(odd):hover {
+         @include hoverTransform;
         }
       }
-      &-networks {
+      .menu-link {
+        color: #e7e6e1;
         cursor: pointer;
-        align-items: center;
-        color: white;
-        @include flexRow;
-        :hover {
-          @include hoverTransform;
-        }
-      }
-      &-networks > img {
-        width: 100%;
-        display: block;
-        margin: 0 1rem;
-      }
-    }
-    .title {
-      @include absoluteCenter;
-      width: 800px;
-      text-align: center;
-      //border: 2px solid red;
-      background: radial-gradient(at center, $bgShadow, transparent);
-      &-header {
-        font-size: 6rem;
-        letter-spacing: 0.06em;
-        padding: 1rem;
-        color: $titleTextColor;
-        font-family: "Playfair Display Bold";
-      }
-      &-line {
-        //padding: 1rem;
-      }
-      &-subscription {
-        color: $titleTextColor;
-        font-size: 1.5rem;
-        line-height: 1.5em;
-        font-family: "ProximaNova Regular";
-        letter-spacing: 0.1em;
-        padding: 6rem;
-      }
-      &-btn {
-        padding: 1rem 3rem;
-        border: 1px solid $titleTextColor;
-        font-family: "Alegreya Bold";
+        font-family: "Alegreya Regular", sans-serif;
         font-size: 1.2rem;
-        letter-spacing: 0.2em;
-        color: $titleTextColor;
-        text-transform: uppercase;
-        border-style: dashed;
-        background: $boxShadowMainBanner;
-        outline: inherit;
-        cursor: pointer;
-        &:hover {
-          @include hoverBtn;
-        }
+        letter-spacing: 0.3em;
       }
     }
-    .logo-bread-border {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    &-networks {
+      cursor: pointer;
+      align-items: center;
+      color: white;
+      @include flexRow;
+      :hover {
+        @include hoverTransform;
+      }
     }
-    .logo-bread {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      background: #f3f1f1;
-      opacity: 0.8;
-      border-radius: 50%;
-    }
-    .logo-bread > img {
+    &-networks > img {
+      width: 100%;
       display: block;
-      width: 70%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      margin: 0 1rem;
     }
   }
-}
-.page-second {
-  height: 100vh;
-  background: #fefefe;
-  .page-content {
-    @include pageContent;
-    background: repeating-linear-gradient(
-                    to right,
-                    transparent,
-                    transparent 20px,
-                    #f4f4f4 20px,
-                    #f4f4f4 100px);
+  .title {
+    @include absoluteCenter;
+    width: 800px;
+    text-align: center;
+    //border: 2px solid red;
+    background: radial-gradient(at center, $bgShadow, transparent);
+    &-header {
+      font-size: 6rem;
+      letter-spacing: 0.06em;
+      padding: 1rem;
+      color: $titleTextColor;
+      font-family: "Playfair Display Bold";
+    }
+    &-line {
+      //padding: 1rem;
+    }
+    &-subscription {
+      color: $titleTextColor;
+      font-size: 1.5rem;
+      line-height: 1.5em;
+      font-family: "ProximaNova Regular";
+      letter-spacing: 0.1em;
+      padding: 6rem;
+    }
+    &-btn {
+      padding: 1rem 3rem;
+      border: 1px solid $titleTextColor;
+      font-family: "Alegreya Bold";
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      color: $titleTextColor;
+      text-transform: uppercase;
+      border-style: dashed;
+      background: $boxShadowMainBanner;
+      outline: inherit;
+      cursor: pointer;
+      &:hover {
+        @include hoverBtn;
+      }
+    }
+  }
+  .logo-bread-border {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .logo-bread {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: #f3f1f1;
+    opacity: 0.8;
+    border-radius: 50%;
+  }
+  .logo-bread > img {
+    display: block;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 

@@ -1,0 +1,104 @@
+$headerColor: #57524d;
+$borderChefNameColor: #d7d3d4;
+$subscriptionColor: #b6977f;
+$quotesColor: #c3c3c3;
+$page2ContentLinearColor: #f4f4f4;
+$descriptionColor: #888783;
+
+
+
+.page-second {
+  height: 100vh;
+  background-image: url("../../assets/img/page-second/texture.jpg");
+  .page-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: repeating-linear-gradient(
+                    to right,
+                    transparent,
+                    transparent 20px,
+                    $page2ContentLinearColor 20px,
+                    $page2ContentLinearColor 100px);
+    .left-content {
+      height: 100%;
+      text-align: center;
+      padding: 0 5rem;
+      .content-header {
+        font-family: "Alegreya Bold";
+        font-size: 4rem;
+        color: $headerColor;
+        padding-top: 2rem;
+      }
+      .content-header-subscription {
+        text-transform: uppercase;
+        font-family: "Alegreya Bold";
+        color: $subscriptionColor;
+        letter-spacing: 0.1em;
+        font-size: 1.1rem;
+      }
+      .description {
+        font-family: "ProximaNova Regular";
+        letter-spacing: 0.1em;
+        //font-size: 0.9rem;
+        color: $descriptionColor;
+        line-height: 1.8rem;
+        margin-top: 3rem;
+        //padding: 0;
+      }
+      .header-chef {
+        font-family: "Alegreya Bold";
+        color: $headerColor;
+        font-size: 2rem;
+        padding: 2rem 0;
+      }
+      .chef {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        &-name {
+          font-family: "Alegreya Regular";
+          color: $headerColor;
+          font-size: 2rem;
+          padding: 1rem;
+          border-bottom: 1px solid $borderChefNameColor;
+          border-top: 1px solid $borderChefNameColor;
+        }
+        &-avatar {
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          background-image: url("../../assets/img/page-second/avatar.jpg");
+          background-size: 250%;
+          background-position-x: -40px;
+        }
+      }
+      .quotes {
+        font-size: 4rem;
+        color: $quotesColor;
+        height: 30px;
+      }
+      .quotes-top {
+        transform: scale(-1, -1);
+        text-align: right;
+      }
+      .quote {
+        font-family: Scriptina;
+        font-size: 2rem;
+        color: $subscriptionColor;
+        line-height: 1.2em;
+      }
+      .quotes-bottom {
+        transform: scaleX(-1);
+        text-align: left;
+      }
+    }
+
+
+    .right-content {
+      background: red;
+      height: 100%;
+    }
+  }
+}
