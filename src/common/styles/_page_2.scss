@@ -7,9 +7,11 @@ $descriptionColor: #888783;
 
 @mixin rightContentImg {
   align-items: center;
-  //margin: 1rem;
-  width: 100%;
-  height: 40%;
+  margin: 1rem;
+  //width: 100%;
+  height: 90%;
+  outline: 5px solid white;
+  outline-offset: -10px;
 }
 
 
@@ -18,6 +20,8 @@ $descriptionColor: #888783;
   height: 90vh;
   background-image: url("../../assets/img/page-second/texture.jpg");
   .page-content {
+    //position: relative;
+    //z-index: 1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -28,111 +32,144 @@ $descriptionColor: #888783;
                     transparent 20px,
                     $page2ContentLinearColor 20px,
                     $page2ContentLinearColor 100px);
-    .left-content {
-      height: 100%;
-      text-align: center;
-      padding: 0 4rem;
-      .content-header {
-        font-family: "Alegreya Bold";
-        font-size: 4rem;
-        color: $headerColor;
-        padding-top: 3rem;
-      }
-      .content-header-subscription {
-        text-transform: uppercase;
-        font-family: "Alegreya Bold";
-        color: $subscriptionColor;
-        letter-spacing: 0.1em;
-        font-size: 1.1rem;
-      }
-      .description {
-        font-family: "ProximaNova Regular";
-        letter-spacing: 0.1em;
-        //font-size: 0.9rem;
-        color: $descriptionColor;
-        line-height: 1.8rem;
-        margin-top: 3rem;
-        //padding: 0;
-      }
-      .header-chef {
-        font-family: "Alegreya Bold";
+  }
+  .left-content {
+    //position: relative;
+    //z-index: 0;
+    height: 100%;
+    text-align: center;
+    padding: 0 4rem;
+    .content-header {
+      font-family: "Alegreya Bold";
+      font-size: 4rem;
+      color: $headerColor;
+      padding-top: 4rem;
+    }
+    .content-header-subscription {
+      text-transform: uppercase;
+      font-family: "Alegreya Bold";
+      color: $subscriptionColor;
+      letter-spacing: 0.1em;
+      font-size: 1.1rem;
+    }
+    .description {
+      font-family: "ProximaNova Regular";
+      letter-spacing: 0.1em;
+      //font-size: 0.9rem;
+      color: $descriptionColor;
+      line-height: 1.8rem;
+      margin-top: 3rem;
+      //padding: 0;
+    }
+    .header-chef {
+      font-family: "Alegreya Bold";
+      color: $headerColor;
+      font-size: 2rem;
+      padding: 1.5rem 0;
+    }
+    .chef {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      &-name {
+        font-family: "Alegreya Regular";
         color: $headerColor;
         font-size: 2rem;
-        padding: 1.5rem 0;
+        padding: 1rem;
+        border-bottom: 1px solid $borderChefNameColor;
+        border-top: 1px solid $borderChefNameColor;
       }
-      .chef {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        &-name {
-          font-family: "Alegreya Regular";
-          color: $headerColor;
-          font-size: 2rem;
-          padding: 1rem;
-          border-bottom: 1px solid $borderChefNameColor;
-          border-top: 1px solid $borderChefNameColor;
-        }
-        &-avatar {
-          border-radius: 50%;
-          width: 100px;
-          height: 100px;
-          background-image: url("../../assets/img/page-second/avatar.jpg");
-          background-size: 250%;
-          background-position-x: -40px;
-          margin: 1rem;
-        }
-      }
-      .quotes {
-        font-size: 4rem;
-        color: $quotesColor;
-        height: 30px;
-      }
-      .quotes-top {
-        transform: scale(-1, -1);
-        text-align: right;
-      }
-      .quote {
-        font-family: Scriptina;
-        font-size: 2rem;
-        color: $subscriptionColor;
-        line-height: 1.2em;
-      }
-      .quotes-bottom {
-        transform: scaleX(-1);
-        text-align: left;
+      &-avatar {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        background-image: url("../../assets/img/page-second/avatar.jpg");
+        background-size: 250%;
+        background-position-x: -40px;
+        margin: 1rem;
       }
     }
-    .right-content {
-      height: 100%;
-      //flex-wrap: wrap;
-      //align-items: center;
-      //.wrapper {
-      //    width: 100%;
-      //    display: flex;
-      //    flex-direction: row;
-      //    .top-left {
-      //      @include rightContentImg;
-      //      @include bgBanner;
-      //      background-image: url("../../assets/img/page-second/top-left.jpg");
-      //    }
-      //    .top-right {
-      //      @include rightContentImg;
-      //      @include bgBanner;
-      //      background-image: url("../../assets/img/page-second/top-right.jpg");
-      //    }
-      //  }
-      //  .bottom-left {
-      //    @include rightContentImg;
-      //    @include bgBanner;
-      //    background-image: url("../../assets/img/page-second/bottom-left.jpg");
-      //  }
-      //  .bottom-right {
-      //    @include rightContentImg;
-      //    @include bgBanner;
-      //    background-image: url("../../assets/img/page-second/bottom-right.jpg");
-      //  }
-      //}
+    .quotes {
+      font-size: 4rem;
+      color: $quotesColor;
+      height: 30px;
+    }
+    .quotes-top {
+      transform: scale(-1, -1);
+      text-align: right;
+    }
+    .quote {
+      font-family: Scriptina;
+      font-size: 2rem;
+      color: $subscriptionColor;
+      line-height: 1.2em;
+    }
+    .quotes-bottom {
+      transform: scaleX(-1);
+      text-align: left;
+    }
+  }
+  .right-content {
+    //position: relative;
+    //z-index: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    //flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      width: 100%;
+      height: 70%;
+    }
+    .img {
+      height: 245px;
+    }
+    .top-left {
+      @include bgBanner;
+      @include rightContentImg;
+      background-image: url("../../assets/img/page-second/top-left.jpg");
+    }
+    .top-right {
+      @include bgBanner;
+      @include rightContentImg;
+      background-image: url("../../assets/img/page-second/top-right.jpg");
+    }
+    .bottom-left {
+      @include bgBanner;
+      @include rightContentImg;
+      background-image: url("../../assets/img/page-second/bottom-left.jpg");
+    }
+    .bottom-right {
+      @include bgBanner;
+      @include rightContentImg;
+      background-image: url("../../assets/img/page-second/bottom-right.jpg");
+    }
+    .sticker {
+      @include bgBanner;
+      @include absoluteCenter;
+      //background-image: url("../../assets/img/page-second/sticker.png");
+      //height: 45%;
+      //width: 35%;
+      opacity: 0.9;
+      & > img {
+        @include absoluteCenter;
+        display: block;
+        width: 70%;
+      }
+      &-text {
+        @include absoluteCenter;
+        font-family: "Alegreya Regular";
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        color: #d3b98d;
+        text-align: center;
+      }
     }
   }
 }
+

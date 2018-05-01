@@ -1,7 +1,7 @@
-//[class*="col-"] {
-//  padding: 1rem;
-//  position: relative;
-//}
+[class*="col-"] {
+  //padding: 1rem;
+  position: relative;
+}
 .col-4 {
   width:  100%;
   flex: 0 0 100%;
@@ -15,9 +15,9 @@
 //  height: 200px;
 //  flex: 0 0 25%;
 //}
-//@media (max-width: 575.98px) {
-//  .col-sm-4 {
-//    width:  100%;
-//    flex: 0 0 100%;
-//  }
-//}
+@media (max-width: 575.98px) {
+  .col-sm-4 {
+    width:  100%;
+    flex: 0 0 100%;
+  }
+}
