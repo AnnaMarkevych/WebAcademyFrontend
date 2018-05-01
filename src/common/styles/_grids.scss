@@ -1,6 +1,6 @@
 [class*="col-"] {
   //padding: 1rem;
-  position: relative;
+  //position: relative;
 }
 .col-4 {
   width:  100%;
@@ -19,5 +19,9 @@
   .col-sm-4 {
     width:  100%;
     flex: 0 0 100%;
+  }
+  .col-sm-1 {
+    width: 25%;
+    flex: 0 0 25%;
   }
 }

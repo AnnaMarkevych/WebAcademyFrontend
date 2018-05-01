@@ -1,0 +1,16 @@
+@media (max-width: 575.98px) {
+  .page-second {
+    .page-content {
+      max-width: 575.98px;
+      min-width: 300px;
+      width: 100%;
+      .left-content {
+        height: 90%;
+      }
+      .right-content {
+        height: 70%;
+        align-items: flex-start;
+      }
+    }
+  }
+}
