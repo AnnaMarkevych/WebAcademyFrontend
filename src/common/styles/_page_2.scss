@@ -5,22 +5,6 @@ $quotesColor: #c3c3c3;
 $page2ContentLinearColor: #f4f4f4;
 $descriptionColor: #888783;
 
-@mixin rightContentImg {
-  align-items: center;
-  margin: 1rem;
-  //width: 100%;
-  height: 90%;
-  outline: 5px solid white;
-  outline-offset: -10px;
-}
-@mixin bgPageContent {
-  background: repeating-linear-gradient(
-                  to right,
-                  transparent,
-                  transparent 20px,
-                  $page2ContentLinearColor 20px,
-                  $page2ContentLinearColor 100px);
-}
 
 .page-second {
   height: 90vh;
@@ -32,7 +16,7 @@ $descriptionColor: #888783;
     height: 90vh;
   }
   .left-content {
-    @include bgPageContent;
+    @include bgGradienPageSecond;
     height: 100%;
     text-align: center;
     padding: 0 4rem;
@@ -108,7 +92,7 @@ $descriptionColor: #888783;
     }
   }
   .right-content {
-    @include bgPageContent;
+    @include bgGradienPageSecond;
     height: 100%;
     width: 100%;
     display: flex;
@@ -123,6 +107,10 @@ $descriptionColor: #888783;
     }
     .img {
       height: 245px;
+      &:hover {
+        transform: scale(1.1, 1.1);
+        transition: transform 0.3s;
+      }
     }
     .top-left {
       @include bgBanner;
