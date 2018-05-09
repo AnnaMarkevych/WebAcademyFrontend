@@ -9,6 +9,7 @@ $descriptionColor: #888783;
 .page-second {
   height: 90vh;
   background-image: url("../../assets/img/page-second/texture.jpg");
+}
   .page-content {
     display: flex;
     flex-direction: row;
@@ -20,6 +21,7 @@ $descriptionColor: #888783;
     height: 100%;
     text-align: center;
     padding: 0 4rem;
+  }
     .content-header {
       font-family: "Alegreya Bold";
       font-size: 4rem;
@@ -90,7 +92,6 @@ $descriptionColor: #888783;
       transform: scaleX(-1);
       text-align: left;
     }
-  }
   .right-content {
     @include bgGradienPageSecond;
     height: 100%;
@@ -154,10 +155,4 @@ $descriptionColor: #888783;
       }
     }
   }
-}
-//.page-third {
-//  .page-content {
-//    @include bgPageContent;
-//  }
-//}
 

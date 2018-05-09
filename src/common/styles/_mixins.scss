@@ -52,4 +52,12 @@
                   $page2ContentLinearColor 20px,
                   $page2ContentLinearColor 100px);
 }
+@mixin corner {
+  clip-path: polygon(
+                  0% 0%,
+                  100% 0%,
+                  100% 100%,
+                  $folderWidth 100%,
+                  0% calc(100% - 60px));
 
+}
