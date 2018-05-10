@@ -13,7 +13,8 @@ $titleTextColor: #f5f5f6;
 }
 .page-content {
   @include pageContent;
-  @include bgGradientMainBanner;
+  //@include bgGradientMainBanner;
+  height: 100vh;
   .menu {
     width: 100%;
     @include flexRow;
@@ -68,7 +69,7 @@ $titleTextColor: #f5f5f6;
   }
   .title {
     @include absoluteCenter;
-    width: 800px;
+    width: 100%;
     text-align: center;
     //border: 2px solid red;
     background: radial-gradient(at center, $bgShadow, transparent);

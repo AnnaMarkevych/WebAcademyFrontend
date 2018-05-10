@@ -1,0 +1,119 @@
+@media (max-width: 1024px) {
+  .page-banner {
+    position: absolute;
+    top: 300%;
+    height: 100vh;
+    width: 1024px;
+    .pancake {
+      width: 80%;
+      height: 40%;
+      top: 45%;
+      left: 10%;
+      box-shadow: -1rem 2rem 10rem 0 $boxshadowTime;
+    }
+    .pancake-wrapper {
+      width: 80%;
+      height: 40%;
+      top: 5%;
+      left: 10%;
+      box-shadow: -1rem 2rem 10rem 0 $boxshadowTime;
+      .pancake-description {
+        background-size: 55% ;
+        .description {
+          margin-top: 3rem;
+          width: 90%;
+          font-size: 1.5rem;
+        }
+        .slideshow {
+          width: 90%;
+          margin-top: 6rem;
+        }
+        .slider {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
+    .pancake-time-wrapper {
+      top: 37%;
+      left: 76%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .page-banner {
+    width: 768px;
+    .pancake {
+      top: 55%;
+    }
+    .pancake-wrapper {
+      height: 50%;
+      .pancake-description {
+        .slideshow {
+          width: 100%;
+        }
+      }
+    }
+    .pancake-time-wrapper {
+      left: 70.5%;
+      top: 0;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+   .page-banner {
+     width: 360px;
+     .pancake {
+        top: 45%;
+     }
+     .pancake-wrapper {
+       height: 40%;
+       .pancake-description {
+         padding: 1rem;
+         .content-header {
+           font-size: 2.5rem;
+         }
+         .description {
+           font-size: 0.5rem;
+           margin-top: 1rem;
+           line-height: 1.2em;
+         }
+         .slideshow {
+           height: 25%;
+           margin-top: 2rem;
+         }
+         .slider {
+           width: 50px;
+           height: 50px;
+         }
+         .pager {
+           width: 25px;
+           height: 25px;
+           font-size: 1.5rem;
+           align-items: flex-end;
+           border: 1px solid;
+         }
+       }
+     }
+     .pancake-time-wrapper {
+       width: 110px;
+       height: 110px;
+       left: 68%;
+       top: 75%;
+       .content-header-subscription {
+         font-size: 1rem;
+         margin-top: 1rem;
+       }
+       .time {
+         font-size: 4rem;
+         line-height: 0.8em;
+       }
+       .unit {
+         font-size: 1rem;
+         margin-top: 0.5rem;
+       }
+     }
+   }
+}

@@ -4,6 +4,7 @@
       max-width: 992px;
       min-width: 767.98px;
       .menu {
+        position: absolute;
         &-logo {
           font-size: 2rem;
           padding: 0;
@@ -75,7 +76,7 @@
           z-index: 2;
           background: #0e0e0eba;
           width: 100vw;
-          height: 50%;
+          height: 50vh;
           &-item {
             padding: 1rem 3rem;
             &:nth-child(even) {
@@ -109,5 +110,25 @@
  }
   .menu.opened .test-block {
     transform: scaleY(1);
+  }
+}
+@media (max-width: 1024px) {
+  .main-banner {
+    .page-content {
+      .menu {
+        &-page {
+          .menu-link {
+            font-size: 0.9rem;
+          }
+        }
+      }
+      .title {
+        //&-btn {
+        //  top: 140%;
+        //  left: 40%;
+        //  position: absolute;
+        //}
+      }
+    }
   }
 }

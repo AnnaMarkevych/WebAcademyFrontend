@@ -1,4 +1,8 @@
 $folderWidth: 60px;
+$pagerColor: #999997;
+$cornerColor: #ffffff;
+$boxshadowTime: #c2b5ae;
+$hoverPagerColor: #978869;
 
 
 .page-banner {
@@ -7,28 +11,23 @@ $folderWidth: 60px;
   background-position: bottom;
   height: 100vh;
   position: relative;
-  .page-content {
-    //@include bgGradienPageSecond;
-    position: relative;
-    height: 100vh;
-  }
-  .pancake-wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    height: 65%;
-    position: absolute;
-    top: 18%;
-    left: 5%;
-    background: #ffffff;
-    @include corner;
+  display: flex;
+  flex-wrap: wrap;
+  //.page-content {
+  //  //@include bgGradienPageSecond;
+    //position: relative;
+  //  height: 100vh;
+  //}
     .pancake {
-      width: 45%;
-      height: 100%;
+      width: 30%;
+      height: 70%;
+      position: absolute;
+      top: 18%;
+      left: 15%;
       @include bgBanner;
       background-image: url("../../assets/img/page-third/pancake.jpg");
       @include corner;
-      position: relative;
+      //position: relative;
     }
     .stars {
       width: 40px;
@@ -42,19 +41,34 @@ $folderWidth: 60px;
         width: 60%;
         margin-top: 1rem;
       }
-
     }
-
+    .pancake-burger {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid saddlebrown;
+    }
     .corner {
       position: absolute;
       top: calc(100% - 60px);
       left: 0;
       height: $folderWidth;
       width: $folderWidth;
-      background:linear-gradient(45deg, transparent 15px, white 0);
+      background:linear-gradient(45deg, transparent 15px, $cornerColor 0);
     }
+  .pancake-wrapper {
+    width: 35%;
+    height: 70%;
+    position: absolute;
+    top: 18%;
+    left: 45%;
+    background: $cornerColor;
     .pancake-description {
-      width: 55%;
+      width: 100%;
       height: 100%;
       padding: 3rem 4rem;
       background-image: url("../../assets/img/page-third/windmill.png");
@@ -62,6 +76,7 @@ $folderWidth: 60px;
       background-repeat: no-repeat;
       background-position-x: 100%;
       .content-header {
+        font-size: 3rem;
         padding: 0;
       }
       .description {
@@ -74,12 +89,12 @@ $folderWidth: 60px;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-top: 7rem;
+        margin-top: 4rem;
       }
       .slider {
         width: 90px;
         height: 90px;
-        border: 1px solid white;
+        border: 1px solid $cornerColor;
         border-radius: 50%;
       }
       .slider-first {
@@ -101,13 +116,53 @@ $folderWidth: 60px;
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        border: 2px solid #999997;
+        border: 2px solid $pagerColor;
         display: flex;
         justify-content: center;
         align-items: baseline;
         font-size: 2rem;
-        color: #999997;
+        color: $pagerColor;
+        &:hover {
+          @include hoverTransform;
+          color: $hoverPagerColor;
+          border: 2px solid $hoverPagerColor;
+        }
       }
+    }
+  }
+  .pancake-time-wrapper {
+    position: absolute;
+    left: 68%;
+    top: 10%;
+    width: 225px;
+    height: 225px;
+    background: $cornerColor;
+    box-shadow: -1rem 2rem 10rem 0 $boxshadowTime;
+    .pancake-time {
+      width: 100%;
+      height: 100%;
+      background-image: url("../../assets/img/page-third/fild.png");
+      @include  bgBanner;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .content-header-subscription {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .time {
+      font-size: 8rem;
+      font-family: "Alegreya Bold";
+      letter-spacing: 0.05em;
+      line-height: 1em;
+      color: #ddc791;
+    }
+    .unit {
+      font-family: "Alegreya Bold";
+      font-size: 1.5rem;
+      color: #a09b93;
+      letter-spacing: 0.08em;
     }
   }
 }
