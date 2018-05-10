@@ -1,0 +1,128 @@
+.page-fours {
+  background-image: url("../../assets/img/page-fours/placeholder.jpg");
+  height: 100vh;
+  position: relative;
+  @include bgBanner;
+  @include flexRow;
+  .left-content {
+    padding: 0 10rem;
+    .content-header {
+      color: $cornerColor;
+    }
+    .content-header {
+      &.fours {
+        //padding-top: 3rem;
+        font-size: 1.8rem;
+        letter-spacing: 0.1em;
+      }
+    }
+    .breakfast-subscription {
+      font-family: "ProximaNova Regular";
+      color: #aeb4b4;
+      padding: 1rem;
+    }
+    .price {
+      font-family: "Alegreya Regular";
+      color: #c3b99e;
+      font-size: 2.5rem;
+      margin-top: 1rem;
+    }
+  }
+  .right-content {
+    position: relative;
+    .list-wrapper {
+      position: relative;
+      width: 55%;
+      height: 80%;
+      background: #f2f2ea;
+      @include corner;
+      outline: 1px dashed #807f7a ;
+      outline-offset: -15px;
+      .corner {
+        position: absolute;
+        top: calc(100% - 60px);
+        left: 0;
+        height: $folderWidth;
+        width: $folderWidth;
+        background:linear-gradient(45deg, transparent 15px, $cornerColor 0);
+      }
+      .list {
+        width: 100%;
+        height: 100%;
+        @include corner;
+        background-image: url("../../assets/img/page-fours/zerno.png");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-position-x: 320%;
+        background-position-y: 115%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &-year-wrapper {
+          width: 100%;
+          @include flexRow;
+          justify-content: space-around;
+          padding-top: 3rem;
+          .year {
+            text-transform: uppercase;
+            font-family: "Alegreya Bold";
+            color: #83827e;
+          }
+        }
+        &-emblem-wrapper {
+          @include flexRow;
+          justify-content: center;
+          align-items: center;
+          padding: 1.5rem;
+          .round {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #83827e;
+          }
+          hr {
+            color: #83827e;
+            height: 1px;
+            width: 35%;
+            margin: 0;
+          }
+          .big-round {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 1px solid #83827e;
+            background-image: url("../../assets/img/page-fours/vector1.png");
+            @include  bgBanner;
+            background-size: 80%;
+          }
+        }
+        .content-header {
+          font-size: 3rem;
+          text-align: center;
+          padding-top: 2rem;
+        }
+        .description {
+          text-align: center;
+          padding: 2rem;
+        }
+        &-btn {
+          width: 40%;
+          padding: 1rem 3rem;
+          border: 1px solid #83827e;
+          font-family: "Alegreya Bold";
+          font-size: 1.2rem;
+          color: #8b4a10;
+          text-transform: uppercase;
+          outline: inherit;
+          cursor: pointer;
+          background: none;
+          margin: 4rem auto;
+          &:hover {
+            @include hoverTransform;
+          }
+        }
+      }
+    }
+  }
+
+}
