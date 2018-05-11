@@ -116,21 +116,25 @@ $descriptionColor: #888783;
     @include bgBanner;
     @include rightContentImg;
     background-image: url("../../assets/img/page-second/top-left.jpg");
+    box-shadow: 0 1rem 3rem 0 #c2b5ae;
   }
   .top-right {
     @include bgBanner;
     @include rightContentImg;
     background-image: url("../../assets/img/page-second/top-right.jpg");
+    box-shadow: 0 1rem 3rem 0 #c2b5ae;
   }
   .bottom-left {
     @include bgBanner;
     @include rightContentImg;
     background-image: url("../../assets/img/page-second/bottom-left.jpg");
+    box-shadow: 0 1rem 3rem 0 #c2b5ae;
   }
   .bottom-right {
     @include bgBanner;
     @include rightContentImg;
     background-image: url("../../assets/img/page-second/bottom-right.jpg");
+    box-shadow: 0 1rem 3rem 0 #c2b5ae;
   }
   .sticker {
     @include bgBanner;

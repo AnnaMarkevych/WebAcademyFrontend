@@ -126,6 +126,7 @@ $hoverPagerColor: #978869;
           @include hoverTransform;
           color: $hoverPagerColor;
           border: 2px solid $hoverPagerColor;
+          cursor: pointer;
         }
       }
     }

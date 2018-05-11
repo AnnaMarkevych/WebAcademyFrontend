@@ -26,9 +26,11 @@
     width: 33%;
     height: 100%;
     padding: 0;
-    //display: inline-block;
     .left-content {
-      //display: none;
+      padding-left: 10rem;
+      padding-right: 0;
+      display: flex;
+      flex-direction: column;
       .ingridients {
         width: 100%;
         height: 33%;
@@ -39,6 +41,11 @@
           width: 90px;
           height: 90px;
           border-radius: 50%;
+          box-shadow: 0 1rem 3rem 0 $boxshadowTime;
+          &:hover {
+            @include hoverTransform;
+            cursor: pointer;
+          }
         }
         .ingridient-first {
           background-image: url("../../assets/img/page-fives/corn.jpg");
@@ -53,6 +60,7 @@
           font-size: 1.8rem;
           letter-spacing: 0.05em;
           color: #a4805f;
+          padding-top: 1rem;
         }
         .ingridient-subscription {
           font-family: "ProximaNova Regular";
@@ -80,16 +88,71 @@
     height: 100%;
     position: relative;
     .sendwich {
-      @include absoluteCenter;
-      width: 85%;
+      position: absolute;
+      top: 50%;
+      left: 9%;
+      transform: translateY(-50%);
+      width: 68%;
       height: 75%;
       background-image: url("../../assets/img/page-fives/sandwich.jpg");
       @include  bgBanner;
-      //background-repeat: no-repeat;
-      //background-position: left;
-      //background-size: 107%;
-      //background-position-x: -70% ;
       border: 8px solid $cornerColor;
+      box-shadow: 0 1rem 3rem 0 $boxshadowTime;
+    }
+    .info-wrapper {
+      position: absolute;
+      width: 165px;
+      height: 82%;
+      top: 9%;
+      left: 60%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1rem 3rem 0 $boxshadowTime;
+      //background: #fcfbf9b5;
+      .info {
+        width: 100%;
+        height: 33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:nth-child(1){
+          background: #fcfbf9b5;
+        }
+        &:nth-child(2) {
+          margin-top: 0.7%;
+          margin-bottom: 0.3%;
+          background: #fcfbf9b5;
+        }
+        &:nth-child(3) {
+          background: $cornerColor;
+        }
+        &.summ-time {
+          background-image: url("../../assets/img/page-third/fild.png");
+          @include bgBanner;
+          .time {
+            color: #ddc791;
+            font-size: 5rem;
+          }
+        }
+        .content-header-subscription {
+          color: #a4805f;
+        }
+        .time {
+          font-size: 4rem;
+          font-family: "Alegreya Bold";
+          letter-spacing: 0.05em;
+          line-height: 1em;
+          color: #544f49;
+        }
+        .unit {
+          font-family: "Alegreya Bold";
+          font-size: 1rem;
+          color: #a09b93;
+          letter-spacing: 0.08em;
+        }
+
+      }
     }
   }
 }
