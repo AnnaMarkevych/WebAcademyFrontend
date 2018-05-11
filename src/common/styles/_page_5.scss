@@ -17,5 +17,79 @@
       font-size: 0.9rem;
     }
   }
-  .left-content
+  .content-wrapper {
+    @include flexRow
+    flex-wrap: wrap;
+    height: calc(100% - 143.6px);
+  }
+  .left-content-wrapper {
+    width: 33%;
+    height: 100%;
+    padding: 0;
+    //display: inline-block;
+    .left-content {
+      //display: none;
+      .ingridients {
+        width: 100%;
+        height: 33%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .ingridient {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+        }
+        .ingridient-first {
+          background-image: url("../../assets/img/page-fives/corn.jpg");
+          background-position: center;
+          background-position-x: 78%;
+          background-position-y: 114%;
+          background-repeat: no-repeat;
+          background-size: 200%;
+        }
+        .ingridient-header {
+          font-family: "Alegreya Bold";
+          font-size: 1.8rem;
+          letter-spacing: 0.05em;
+          color: #a4805f;
+        }
+        .ingridient-subscription {
+          font-family: "ProximaNova Regular";
+          font-size: 0.9rem;
+          color: #7e7a72;
+        }
+        .ingridient-second {
+          background-image: url("../../assets/img/page-fives/eggs.jpg");
+          background-repeat: no-repeat;
+          background-position: left;
+          background-position-x: 24%;
+          background-size: 150%;
+        }
+        .ingridient-third {
+          background-image: url("../../assets/img/page-fives/chees.jpg");
+          //background-repeat: no-repeat;
+          //background-position: center;
+          @include bgBanner;
+        }
+      }
+    }
+  }
+  .right-content-wrapper {
+    width: 66%;
+    height: 100%;
+    position: relative;
+    .sendwich {
+      @include absoluteCenter;
+      width: 85%;
+      height: 75%;
+      background-image: url("../../assets/img/page-fives/sandwich.jpg");
+      @include  bgBanner;
+      //background-repeat: no-repeat;
+      //background-position: left;
+      //background-size: 107%;
+      //background-position-x: -70% ;
+      border: 8px solid $cornerColor;
+    }
+  }
 }
