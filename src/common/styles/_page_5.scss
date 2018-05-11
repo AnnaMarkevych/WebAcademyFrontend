@@ -1,0 +1,21 @@
+.page-fives {
+  background-image: url("../../assets/img/page-fives/page5.jpg");
+  height: 100vh;
+  @include bgBanner;
+  &-header {
+    text-align: center;
+    background-image: url("../../assets/img/page-third/windmill.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 7%;
+    .content-header {
+      padding-top: 5rem;
+      font-size: 3rem;
+    }
+    .content-header-subscription {
+      letter-spacing: 0.05em;
+      font-size: 0.9rem;
+    }
+  }
+  .left-content
+}

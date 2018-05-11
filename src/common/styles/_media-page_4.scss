@@ -1,0 +1,205 @@
+@media (max-width: 1024px) {
+  .page-fours {
+    position: absolute;
+    top: 400%;
+    height: 100vh;
+    width: 1024px;
+    .left-content {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      height: 38%;
+      .content-header {
+        padding-top: 2rem;
+        &.fours {
+          padding-top: 1rem;
+        }
+      }
+      .price {
+        margin-top: 0.5rem;
+      }
+
+    }
+    .right-content {
+      position: absolute;
+      width: 100%;
+      height: 60%;
+      top: 38%;
+      .list-wrapper {
+        height: 90%;
+        width: 50%;
+        left: 60%;
+        //display: none;
+        .list {
+          .content-header {
+            padding-top: 0;
+          }
+          .description {
+            padding: 2rem 1.8rem;
+          }
+          &-btn {
+            margin: 2rem auto;
+          }
+        }
+      }
+      .list-wrapper-second {
+        height: 85%;
+        width: 50%;
+        left: 63%;
+        //display: none;
+        .list {
+          &-year-wrapper {
+            padding-top: 1rem;
+          }
+          &-emblem-wrapper {
+            padding: 0;
+          }
+          .content-header {
+            padding-top: 0;
+          }
+          &-btn-second {
+            margin: 1rem auto;
+          }
+        }
+      }
+      .list-wrapper-third {
+        height: 80%;
+        width: 50%;
+        left: 65.5%;
+        .list {
+          &-year-wrapper {
+            padding-top: 1rem;
+          }
+          &-emblem-wrapper {
+            padding: 0;
+          }
+          .content-header {
+            padding-top: 0;
+          }
+          &-btn{
+            margin: 1rem auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .page-fours {
+    width: 768px;
+    .left-content {
+      text-align: left;
+      padding-left: 7rem;
+      height: 40%;
+      .content-header {
+        &.fours {
+          padding-top: 2rem;
+        }
+      }
+      .breakfast-subscription {
+        padding-left: 0;
+        //padding-top: 0;
+      }
+      .price {
+        display: inline-block;
+        font-size: 3rem;
+        margin: 0;
+        line-height: 0.1em;
+      }
+    }
+    .right-content {
+      height: 60%;
+      top: 40%;
+      .list-wrapper {
+        //width: 45%;
+        //display: none;
+      }
+      .list-wrapper-second {
+        //width: 45%;
+        //display: none;
+      }
+      .list-wrapper-third {
+        //width: 45%;
+        .list {
+          &-btn {
+            margin: 2rem auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .page-fours {
+    width: 360px;
+    .left-content {
+      height: 100%;
+      width: 100%;
+      padding-left: 3rem;
+      padding-right: 0;
+      .content-header {
+        padding-top: 3rem;
+      }
+      .price {
+        display: block;
+        line-height: 1em;
+      }
+    }
+    .right-content {
+      //display: none;
+      background-image: url("../../assets/img/page-fours/placeholder.jpg");
+      top: 100%;
+      height: 100%;
+      .list-wrapper {
+        //display: none;
+        height: 95%;
+        width: 90%;
+        top: 47.5%;
+        left: 45%;
+        .list {
+          background-position-x: -605%;
+          .content-header {
+            font-size: 2.5rem;
+          }
+        }
+      }
+      .list-wrapper-second {
+        //display: none;
+        height: 90%;
+        width: 90%;
+        left: 50%;
+        top: 50%;
+        .list {
+          background-position-x: -605%;
+          .content-header {
+            font-size: 2.5rem;
+          }
+          &-emblem-wrapper {
+            hr {
+              width: 28%;
+            }
+          }
+        }
+      }
+      .list-wrapper-third {
+        height: 85%;
+        width: 90%;
+        left: 55%;
+        top: 52%;
+        .list {
+          background-position-x: -605%;
+          .content-header {
+            font-size: 2.5rem;
+          }
+          &-emblem-wrapper {
+            hr {
+              width: 28%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
