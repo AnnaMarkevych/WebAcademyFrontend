@@ -1,0 +1,54 @@
+.footer {
+  height: 25vh;
+  background-image: url("../../assets/img/page-fives/page5.jpg");
+  @include bgBanner;
+  &-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    @include bgGradienPageSecond;
+    height: 100%;
+    .footer-menu {
+      padding-top: 4rem;
+      width: 100%;
+      @include flexRow;
+      justify-content: space-between;
+      &-page {
+        .menu-page {
+          @include flexRow;
+          justify-content: space-between;
+          align-items: baseline;
+          text-transform: uppercase;
+          margin-left: 2rem;
+          border-top: 1px solid #676560;
+          border-bottom: 1px solid #676560;
+          padding: 1.5rem 1rem;
+          &-item {
+            padding: 0.5rem 1rem;
+            align-items: center;
+            color: #676560;
+            &:nth-child(odd):hover {
+              @include hoverTransform;
+            }
+          }
+          .menu-link {
+            color: #676560;
+            cursor: pointer;
+            font-family: "Alegreya Regular", sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.2em;
+          }
+        }
+      }
+      &-logo {
+        padding: 1.5rem 0;
+        padding-left: 2rem;
+        align-items: center;
+        color: #676560;
+        font-family: "Scriptina";
+        font-size: 2.5rem;
+        line-height: 0.6em;
+      }
+    }
+  }
+}

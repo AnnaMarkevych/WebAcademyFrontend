@@ -159,5 +159,25 @@
 
       }
     }
+    .btn-recipe {
+      padding: 1.2rem;
+      border: 1px solid #ddc791;
+      font-family: "Alegreya Bold";
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      color: #ddc791;
+      text-transform: uppercase;
+      border-style: dashed;
+      background: white;
+      outline: inherit;
+      cursor: pointer;
+      position: absolute;
+      top: 81%;
+      left: 5%;
+      &:hover {
+        @include hoverBtn;
+      }
+    }
+
   }
 }
