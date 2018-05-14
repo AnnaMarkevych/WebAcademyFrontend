@@ -28,24 +28,33 @@
       .list-wrapper {
         height: 90%;
         width: 50%;
-        left: 60%;
+        left: 50%;
         //display: none;
         .list {
+          background-position-x: 200%;
+          background-position-y: 110%;
+          &-emblem-wrapper {
+            padding: 2rem;
+          }
           .content-header {
-            padding-top: 0;
+            padding-top: 2rem;
           }
           .description {
             padding: 2rem 1.8rem;
           }
           &-btn {
-            margin: 2rem auto;
+            margin: 4rem auto;
           }
         }
       }
+      .list-wrapper-first {
+        //display: none;
+      }
       .list-wrapper-second {
+        //display: none;
         height: 85%;
         width: 50%;
-        left: 63%;
+        left: 53%;
         //display: none;
         .list {
           &-year-wrapper {
@@ -55,17 +64,17 @@
             padding: 0;
           }
           .content-header {
-            padding-top: 0;
+            padding-top: 3rem;
           }
           &-btn-second {
-            margin: 1rem auto;
+            margin: 4rem auto;
           }
         }
       }
       .list-wrapper-third {
         height: 80%;
         width: 50%;
-        left: 65.5%;
+        left: 55.5%;
         .list {
           &-year-wrapper {
             padding-top: 1rem;
@@ -112,18 +121,59 @@
       height: 60%;
       top: 40%;
       .list-wrapper {
-        //width: 45%;
-        //display: none;
-      }
-      .list-wrapper-second {
-        //width: 45%;
-        //display: none;
-      }
-      .list-wrapper-third {
-        //width: 45%;
+        left: 60%;
         .list {
+          background-position-x: 500%;
+          .content-header {
+            //padding-top: 0;
+          }
+          .description {
+            margin-top: 0;
+          }
           &-btn {
-            margin: 2rem auto;
+            margin: 1rem auto;
+          }
+        }
+        &-first {
+          //display: none;
+        }
+        &-second {
+          //display: none;
+          left: 63%;
+          .list {
+            &-emblem-wrapper {
+              hr {
+                width: 30%;
+              }
+            }
+            .content-header {
+              padding: 2rem;
+            }
+            .description {
+              padding: 0 1.8rem;
+            }
+            &-btn {
+              margin: 2rem auto;
+            }
+          }
+        }
+        &-third {
+          left: 66%;
+          .list {
+            &-emblem-wrapper {
+              hr {
+                width: 30%;
+              }
+            }
+            .content-header {
+              padding: 0 2rem;
+            }
+            .description {
+              padding: 0 1.8rem;
+            }
+            &-btn {
+              margin: 2rem auto;
+            }
           }
         }
       }
@@ -154,48 +204,50 @@
       height: 100%;
       .list-wrapper {
         //display: none;
-        height: 95%;
+        height: 100%;
         width: 90%;
-        top: 47.5%;
+        top: 50%;
         left: 45%;
         .list {
           background-position-x: -605%;
           .content-header {
+            padding-top: 0;
             font-size: 2.5rem;
           }
         }
-      }
-      .list-wrapper-second {
-        //display: none;
-        height: 90%;
-        width: 90%;
-        left: 50%;
-        top: 50%;
-        .list {
-          background-position-x: -605%;
-          .content-header {
-            font-size: 2.5rem;
-          }
-          &-emblem-wrapper {
-            hr {
-              width: 28%;
+        &-first {
+          //display: none;
+        }
+        &-second {
+          //display: none;
+          height: 95%;
+          width: 90%;
+          left: 50%;
+          top: 52.5%;
+          .list {
+            .content-header {
+              font-size: 2.5rem;
+            }
+            &-emblem-wrapper {
+              hr {
+                width: 28%;
+              }
             }
           }
         }
-      }
-      .list-wrapper-third {
-        height: 85%;
-        width: 90%;
-        left: 55%;
-        top: 52%;
-        .list {
-          background-position-x: -605%;
-          .content-header {
-            font-size: 2.5rem;
-          }
-          &-emblem-wrapper {
-            hr {
-              width: 28%;
+        &-third {
+          height: 90%;
+          width: 90%;
+          left: 55%;
+          top: 55%;
+          .list {
+            .content-header {
+              font-size: 2.5rem;
+            }
+            &-emblem-wrapper {
+              hr {
+                width: 28%;
+              }
             }
           }
         }

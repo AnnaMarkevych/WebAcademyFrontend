@@ -17,7 +17,7 @@ $descriptionColor: #888783;
   height: 100vh;
 }
 .left-content {
-  //@include bgGradienPageSecond;
+  @include bgGradienPageSecond;
   height: 100%;
   text-align: center;
   padding: 0 4rem;

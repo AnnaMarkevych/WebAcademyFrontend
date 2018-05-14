@@ -15,6 +15,7 @@ $boxShadowListWrapper: #c4bfb5;
   @include flexRow;
   .left-content {
     padding: 0 10rem;
+    background: none;
     .content-header {
       color: $cornerColor;
     }
@@ -42,23 +43,14 @@ $boxShadowListWrapper: #c4bfb5;
       //display: none;
       @include absoluteCenter;
       //position: relative;
-      width: 55%;
+      width: 70%;
       height: 80%;
       background: $listWrapperBg;
       @include corner;
       outline: 1px dashed $outLineColor;
       outline-offset: -15px;
       z-index: 3;
-    }
-    .corner {
-        position: absolute;
-        top: calc(100% - 60px);
-        left: 0;
-        height: $folderWidth;
-        width: $folderWidth;
-        background:linear-gradient(45deg, transparent 15px, $cornerColor 0);
-      }
-    .list {
+      .list {
         width: 100%;
         height: 100%;
         @include corner;
@@ -135,69 +127,89 @@ $boxShadowListWrapper: #c4bfb5;
           }
         }
       }
-    .list-wrapper-second {
-      //display: none;
-      position: absolute;
-      top: 52%;
-      left: 52.5%;
-      transform: translate(-50%,-52.5%);
-      width: 55%;
-      height: 75%;
-      background: $listWrapperBgSecond;
-      @include corner;
-      outline: 1px dashed $outLineColor;
-      outline-offset: -15px;
-      box-shadow: inset 0px 5px 15px 5px $boxShadowListWrapper;
-      z-index: 2;
-    }
-    .list {
-      &-emblem-wrapper {
-        .big-round-second {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          border: 1px solid $yearColor;
-          background-image: url("../../assets/img/page-fours/vector2.png");
-          @include  bgBanner;
-          background-size: 80%;
+      &-first {
+        //display: none;
+      }
+      &-second {
+        //display: none;
+        position: absolute;
+        top: 52%;
+        left: 55%;
+        transform: translate(-50%,-52.5%);
+        height: 75%;
+        background: $listWrapperBgSecond;
+        box-shadow: inset 0px 5px 15px 5px $boxShadowListWrapper;
+        z-index: 2;
+        .list {
+          &-emblem-wrapper {
+            .big-round-second {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              border: 1px solid $yearColor;
+              background-image: url("../../assets/img/page-fours/vector2.png");
+              @include  bgBanner;
+              background-size: 80%;
+            }
+          }
+          .description {
+            margin-top: 0;
+            //padding-top: 4rem;
+          }
+          &-btn-second {
+            width: 40%;
+            padding: 1rem 3rem;
+            border: 1px solid $yearColor;
+            font-family: "Alegreya Bold";
+            font-size: 1.2rem;
+            color: $btnReadColor;
+            text-transform: uppercase;
+            outline: inherit;
+            cursor: pointer;
+            background: none;
+            margin: 3rem auto;
+            text-align: center;
+            &:hover {
+              @include hoverTransform;
+            }
+          }
         }
       }
-      .description {
-        margin-top: 0;
-        //padding-top: 4rem;
-      }
-      &-btn-second {
-        width: 40%;
-        padding: 1rem 3rem;
-        border: 1px solid $yearColor;
-        font-family: "Alegreya Bold";
-        font-size: 1.2rem;
-        color: $btnReadColor;
-        text-transform: uppercase;
-        outline: inherit;
-        cursor: pointer;
-        background: none;
-        margin: 3rem auto;
-        text-align: center;
-        &:hover {
-          @include hoverTransform;
+      &-third {
+        position: absolute;
+        top: 53.5%;
+        left: 60%;
+        transform: translate(-50%,-55%);
+        //width: 55%;
+        height: 70%;
+        background: $listWrapperBgSecond;
+        box-shadow: inset 0px 5px 15px 5px $boxShadowListWrapper;
+        z-index: 1;
+        .list {
+          &-emblem-wrapper {
+            //padding: 1.5rem 0;
+          }
+          .content-header {
+            padding-top: 0;
+          }
+          .description {
+            margin-top: 0;
+            padding: 0 2rem;
+            &-btn {
+              margin: 0 auto;
+            }
+          }
         }
       }
     }
-    .list-wrapper-third {
-      position: absolute;
-      top: 54%;
-      left: 55%;
-      transform: translate(-50%,-55%);
-      width: 55%;
-      height: 70%;
-      background: $listWrapperBgSecond;
-      @include corner;
-      outline: 1px dashed $outLineColor;
-      outline-offset: -15px;
-      box-shadow: inset 0px 5px 15px 5px $boxShadowListWrapper;
-      z-index: 1;
-    }
+    .corner {
+        position: absolute;
+        top: calc(100% - 60px);
+        left: 0;
+        height: $folderWidth;
+        width: $folderWidth;
+        background:linear-gradient(45deg, transparent 15px, $cornerColor 0);
+      }
   }
 
 }

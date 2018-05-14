@@ -2,6 +2,10 @@
   background-image: url("../../assets/img/page-fives/page5.jpg");
   height: 100vh;
   @include bgBanner;
+  &-content {
+    @include bgGradienPageSecond;
+    @include pageContent;
+  }
   &-header {
     text-align: center;
     background-image: url("../../assets/img/page-third/windmill.png");
@@ -27,6 +31,7 @@
     height: 100%;
     padding: 0;
     .left-content {
+      background: none;
       padding-left: 10rem;
       padding-right: 0;
       display: flex;

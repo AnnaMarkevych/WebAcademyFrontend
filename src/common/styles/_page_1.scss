@@ -13,7 +13,7 @@ $titleTextColor: #f5f5f6;
 }
 .page-content {
   @include pageContent;
-  //@include bgGradientMainBanner;
+  @include bgGradientMainBanner;
   height: 100vh;
   .menu {
     width: 100%;
@@ -36,6 +36,7 @@ $titleTextColor: #f5f5f6;
       @include flexRow;
       justify-content: space-between;
       text-transform: uppercase;
+      margin-left: 2rem;
       &-item {
         padding: 0.5rem 1rem;
         align-items: center;
@@ -62,7 +63,7 @@ $titleTextColor: #f5f5f6;
       }
     }
     &-networks > img {
-      width: 100%;
+      width: 14%;
       display: block;
       margin: 0 1rem;
     }

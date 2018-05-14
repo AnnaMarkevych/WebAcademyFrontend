@@ -41,7 +41,8 @@
     }
     .right-content {
       //display: none;
-      padding: 2rem;
+      padding: 0 2rem;
+      @include bgGradienPageSecond;
       .content-wrapper {
         height: 90%;
       }
@@ -86,6 +87,7 @@
     }
     .right-content {
       //display: none;
+      //@include bgGradientMainBanner;
       max-width: 767.98px;
       .content-wrapper {
         height: 100%;

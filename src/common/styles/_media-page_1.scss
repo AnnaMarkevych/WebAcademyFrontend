@@ -1,13 +1,12 @@
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .main-banner {
+    width: 767.98px;
     .page-content {
-      max-width: 992px;
-      min-width: 767.98px;
       .menu {
         position: absolute;
         &-logo {
           font-size: 2rem;
-          padding: 0;
+          padding: 0 1rem;
         }
         &-page {
           &-item {
@@ -25,6 +24,7 @@
           padding: 0.5rem 0.8rem;
         }
         &-networks > img {
+          width: 20%;
           margin: 0;
           margin-left: 0.8rem;
         }
@@ -40,15 +40,20 @@
     }
   }
 }
-@media (max-width: 575.98px) {
+@media (max-width: 360px) {
   .main-banner {
+    width: 360px;
     .page-content {
-      max-width: 575.98px;
-      min-width: 300px;
+      //max-width: 575.98px;
+      //min-width: 300px;
       width: 100%;
       .menu {
         align-items: center;
+        justify-content: space-between;
         padding: 0.5rem 0;
+        &-logo {
+          font-size: 2rem;
+        }
         &-burger {
           display: flex;
           flex-direction: column;
@@ -62,9 +67,6 @@
             margin: 0.2rem 0;
           }
         }
-        &-logo {
-          font-size: 3rem;
-        }
         &-page {
           transform: scaleY(0);
           transform-origin: top;
@@ -77,6 +79,7 @@
           background: #0e0e0eba;
           width: 100vw;
           height: 50vh;
+          margin-left: 0;
           &-item {
             padding: 1rem 3rem;
             &:nth-child(even) {
@@ -91,7 +94,13 @@
           }
         }
         &-networks {
-          padding: 0.5rem 0.9rem;
+          padding: 0;
+          width: 120px;
+          //margin-left: 3rem;
+        }
+        &-networks > img {
+          padding:  0;
+          width: 18%;
         }
       }
       .title {
@@ -102,6 +111,14 @@
         &-subscription {
           font-size: 1rem;
         }
+      }
+      .logo-bread-border > img {
+        width: 60%;
+        transform: translate(33%, 0%);
+      }
+      .logo-bread {
+        width: 50px;
+        height: 50px;
       }
     }
   }
