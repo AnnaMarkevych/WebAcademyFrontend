@@ -52,12 +52,98 @@
 
 @media (max-width: 360px) {
   .footer {
+    height: 11vh;
     width: 360px;
     top: 700%;
+    box-shadow: inset 0 5rem 0 0 #c2b5ae5e;
+    @include bgGradienPageSecond;
     &-content {
+      background: none;
+      display: flex;
+      align-items: center;
       .footer-menu {
-        padding-top: 3rem;
+        padding: 0;
+        align-items: center;
+        //padding-top: 4rem;
+        justify-content: space-between;
+        .menu-burger {
+          display: flex;
+          flex-direction: column;
+          background: transparent;
+          border: none;
+          outline: inherit;
+          cursor: pointer;
+          &-bar {
+            width: 3rem;
+            height: 0.3rem;
+            background: #676560;
+            margin-bottom: 0.3rem;
+            &:nth-child(3) {
+              margin-bottom: 0;
+            }
+          }
+        }
+        &-page {
+          //display: none;
+          .menu-page {
+            display: none;
+            transform: scaleY(1);
+            transform-origin: bottom;
+            transition: transform 1s;
+            //display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 4.5rem;
+            z-index: 2;
+            background: #0e0e0eba;
+            //width: 360px;
+            height: 50vh;
+            margin-left: 0;
+            padding: 0;
+            //left: 0;
+            .menu-page-item {
+              &:nth-child(even) {
+                display: none;
+              }
+            }
+          }
+        }
+        &-logo {
+          line-height: 0;
+          margin-left: 12rem;
+        }
       }
     }
+    &-menu-burger {
+      @include hiddenMenu;
+      display: flex;
+      bottom: 4.5rem;
+      transform-origin: bottom;
+      height: 53vh;
+      .menu-burger  {
+        width: 100%;
+        height: 100%;
+        &-item {
+          padding: 1.2rem 3rem;
+          &:hover {
+            @include hoverBtn;
+          }
+          .burger-link {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-family: "Alegreya Regular", sans-serif;
+            color: #e7e6e1;
+            letter-spacing: 0.1em;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer.opened .footer-menu-burger {
+      transform: scaleY(1);
   }
 }

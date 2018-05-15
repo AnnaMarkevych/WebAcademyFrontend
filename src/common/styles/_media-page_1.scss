@@ -40,12 +40,11 @@
     }
   }
 }
+
 @media (max-width: 360px) {
   .main-banner {
     width: 360px;
     .page-content {
-      //max-width: 575.98px;
-      //min-width: 300px;
       width: 100%;
       .menu {
         align-items: center;
@@ -55,29 +54,23 @@
           font-size: 2rem;
         }
         &-burger {
-          display: flex;
-          flex-direction: column;
+          @include flexCol;
           background: transparent;
           border: none;
           outline: inherit;
           &-bar {
             width: 3rem;
             height: 0.3rem;
-            background: #e7e6e1;
+            background: $menuColor;
             margin: 0.2rem 0;
           }
         }
         &-page {
-          transform: scaleY(0);
+          @include hiddenMenu;
+          @include flexCol;
           transform-origin: top;
-          transition: transform 1s;
-          flex-direction: column;
           justify-content: space-between;
-          position: absolute;
           top: 4rem;
-          z-index: 2;
-          background: #0e0e0eba;
-          width: 100vw;
           height: 50vh;
           margin-left: 0;
           &-item {
@@ -96,10 +89,9 @@
         &-networks {
           padding: 0;
           width: 120px;
-          //margin-left: 3rem;
         }
         &-networks > img {
-          padding:  0;
+          padding: 0;
           width: 18%;
         }
       }
@@ -117,18 +109,15 @@
         transform: translate(33%, 0%);
       }
       .logo-bread {
-        width: 50px;
-        height: 50px;
+        @include roundSizeMedia;
       }
     }
   }
  .menu.opened .menu-page {
    transform: scaleY(1);
  }
-  .menu.opened .test-block {
-    transform: scaleY(1);
-  }
 }
+
 @media (max-width: 1024px) {
   .main-banner {
     .page-content {
@@ -138,13 +127,6 @@
             font-size: 0.9rem;
           }
         }
-      }
-      .title {
-        //&-btn {
-        //  top: 140%;
-        //  left: 40%;
-        //  position: absolute;
-        //}
       }
     }
   }

@@ -125,13 +125,16 @@
         .list {
           background-position-x: 500%;
           .content-header {
-            //padding-top: 0;
+            padding-top: 0;
           }
           .description {
             margin-top: 0;
           }
           &-btn {
             margin: 1rem auto;
+          }
+          &-year-wrapper {
+            padding-top: 0;
           }
         }
         &-first {

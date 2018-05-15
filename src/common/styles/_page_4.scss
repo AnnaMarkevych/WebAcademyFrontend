@@ -1,12 +1,3 @@
-$breakfastSubsrciptionColor: #aeb4b4;
-$priceColor: #c3b99e;
-$listWrapperBg: #f2f2ea;
-$outLineColor: #807f7a;
-$yearColor: #83827e;
-$listWrapperBgSecond: #d9d3c7;
-$btnReadColor: #8b4a10;
-$boxShadowListWrapper: #c4bfb5;
-
 .page-fours {
   background-image: url("../../assets/img/page-fours/placeholder.jpg");
   height: 100vh;
@@ -42,7 +33,6 @@ $boxShadowListWrapper: #c4bfb5;
     .list-wrapper {
       //display: none;
       @include absoluteCenter;
-      //position: relative;
       width: 70%;
       height: 80%;
       background: $listWrapperBg;
@@ -59,8 +49,7 @@ $boxShadowListWrapper: #c4bfb5;
         background-position: bottom;
         background-position-x: 320%;
         background-position-y: 115%;
-        display: flex;
-        flex-direction: column;
+        @include flexCol;
         justify-content: center;
         &-year-wrapper {
           width: 100%;
@@ -75,8 +64,7 @@ $boxShadowListWrapper: #c4bfb5;
         }
         &-emblem-wrapper {
           @include flexRow;
-          justify-content: center;
-          align-items: center;
+          @include flexCenter;
           padding: 1.5rem;
           .round {
             width: 10px;
@@ -110,17 +98,13 @@ $boxShadowListWrapper: #c4bfb5;
           padding: 2rem;
         }
         &-btn {
+          @include btnStyle;
           width: 40%;
           padding: 1rem 3rem;
           border: 1px solid $yearColor;
-          font-family: "Alegreya Bold";
-          font-size: 1.2rem;
           color: $btnReadColor;
-          text-transform: uppercase;
-          outline: inherit;
-          cursor: pointer;
           background: none;
-          margin: 4rem auto;
+          margin: 3rem auto;
           text-align: center;
           &:hover {
             @include hoverTransform;
@@ -154,18 +138,13 @@ $boxShadowListWrapper: #c4bfb5;
           }
           .description {
             margin-top: 0;
-            //padding-top: 4rem;
           }
           &-btn-second {
             width: 40%;
             padding: 1rem 3rem;
             border: 1px solid $yearColor;
-            font-family: "Alegreya Bold";
-            font-size: 1.2rem;
+            @include btnStyle;
             color: $btnReadColor;
-            text-transform: uppercase;
-            outline: inherit;
-            cursor: pointer;
             background: none;
             margin: 3rem auto;
             text-align: center;
@@ -180,15 +159,11 @@ $boxShadowListWrapper: #c4bfb5;
         top: 53.5%;
         left: 60%;
         transform: translate(-50%,-55%);
-        //width: 55%;
         height: 70%;
         background: $listWrapperBgSecond;
         box-shadow: inset 0px 5px 15px 5px $boxShadowListWrapper;
         z-index: 1;
         .list {
-          &-emblem-wrapper {
-            //padding: 1.5rem 0;
-          }
           .content-header {
             padding-top: 0;
           }

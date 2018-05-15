@@ -1,18 +1,9 @@
-$headerColor: #57524d;
-$borderChefNameColor: #d7d3d4;
-$subscriptionColor: #b6977f;
-$quotesColor: #c3c3c3;
-$page2ContentLinearColor: #f4f4f4;
-$descriptionColor: #888783;
-
-
 .page-second {
   height: 100vh;
   background-image: url("../../assets/img/page-second/texture.jpg");
 }
 .page-content {
-  display: flex;
-  flex-direction: row;
+  @include flexRow;
   flex-wrap: wrap;
   height: 100vh;
 }
@@ -38,11 +29,9 @@ $descriptionColor: #888783;
 .description {
   font-family: "ProximaNova Regular";
   letter-spacing: 0.1em;
-  //font-size: 0.9rem;
   color: $descriptionColor;
   line-height: 1.8rem;
   margin-top: 3rem;
-  //padding: 0;
 }
 .header-chef {
   font-family: "Alegreya Bold";
@@ -52,8 +41,7 @@ $descriptionColor: #888783;
 }
 .chef {
   @include flexRow;
-  align-items: center;
-  justify-content: center;
+  @include flexCenter;
   &-name {
     font-family: "Alegreya Regular";
     color: $headerColor;
@@ -63,9 +51,7 @@ $descriptionColor: #888783;
     border-top: 1px solid $borderChefNameColor;
   }
   &-avatar {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    @include avatarSize;
     background-image: url("../../assets/img/page-second/avatar.jpg");
     background-size: 250%;
     background-position-x: -40px;
@@ -92,12 +78,10 @@ $descriptionColor: #888783;
   text-align: left;
 }
 .right-content {
-  //@include bgGradienPageSecond;
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter;
   .content-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -108,40 +92,28 @@ $descriptionColor: #888783;
   .img {
     height: 245px;
     &:hover {
-      transform: scale(1.1, 1.1);
-      transition: transform 0.3s;
+      @include hoverBtn;
     }
   }
   .top-left {
-    @include bgBanner;
-    @include rightContentImg;
+    @include imgStyle;
     background-image: url("../../assets/img/page-second/top-left.jpg");
-    box-shadow: 0 1rem 3rem 0 #c2b5ae;
   }
   .top-right {
-    @include bgBanner;
-    @include rightContentImg;
+    @include imgStyle;
     background-image: url("../../assets/img/page-second/top-right.jpg");
-    box-shadow: 0 1rem 3rem 0 #c2b5ae;
   }
   .bottom-left {
-    @include bgBanner;
-    @include rightContentImg;
+    @include imgStyle;
     background-image: url("../../assets/img/page-second/bottom-left.jpg");
-    box-shadow: 0 1rem 3rem 0 #c2b5ae;
   }
   .bottom-right {
-    @include bgBanner;
-    @include rightContentImg;
+    @include imgStyle
     background-image: url("../../assets/img/page-second/bottom-right.jpg");
-    box-shadow: 0 1rem 3rem 0 #c2b5ae;
   }
   .sticker {
     @include bgBanner;
     @include absoluteCenter;
-    //background-image: url("../../assets/img/page-second/sticker.png");
-    //height: 45%;
-    //width: 35%;
     opacity: 0.9;
     & > img {
       @include absoluteCenter;
@@ -153,7 +125,7 @@ $descriptionColor: #888783;
       font-family: "Alegreya Regular";
       text-transform: uppercase;
       font-size: 1.5rem;
-      color: #d3b98d;
+      color: $stickerTextColor;
       text-align: center;
     }
   }

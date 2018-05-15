@@ -15,6 +15,14 @@
   display: flex;
   flex-direction: row;
 }
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flexCenter {
+  align-items: center;
+  justify-content: center;
+}
 @mixin hoverTransform {
   transform: scale(1.2, 1.2);
   transition: transform 0.3s;
@@ -59,5 +67,76 @@
                   100% 100%,
                   $folderWidth 100%,
                   0% calc(100% - 60px));
-
+}
+@mixin btnStyle {
+  outline: inherit;
+  cursor: pointer;
+  font-family: "Alegreya Bold";
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+@mixin center {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin roundSize {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+@mixin roundSizeMedia {
+  width: 50px;
+  height: 50px;
+}
+@mixin hiddenMenu {
+  transform: scaleY(0);
+  transition: transform 1s;
+  position: absolute;
+  z-index: 2;
+  background: #0e0e0eba;
+  width: 100vw;
+}
+@mixin avatarSize {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+@mixin avatarSizeMedia {
+  width: 150px;
+  height: 150px;
+}
+@mixin imgStyle {
+  @include bgBanner;
+  @include rightContentImg;
+  box-shadow: 0 1rem 3rem 0 $boxShadowImgColor;
+}
+@mixin imgStyleMedia {
+  height: 150px;
+  width: 150px;
+}
+@mixin sliderStyle {
+  width: 90px;
+  height: 90px;
+  border: 1px solid $cornerColor;
+  border-radius: 50%;
+}
+@mixin sliderSizeMedia {
+  width: 120px;
+  height: 120px;
+}
+@mixin pagerSize {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+@mixin pagerSizeMedia {
+  width: 25px;
+  height: 25px;
+}
+@mixin ingridientSize {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
 }

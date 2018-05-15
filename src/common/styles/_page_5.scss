@@ -34,18 +34,14 @@
       background: none;
       padding-left: 10rem;
       padding-right: 0;
-      display: flex;
-      flex-direction: column;
+      @include flexCol;
       .ingridients {
         width: 100%;
         height: 33%;
-        display: flex;
         align-items: center;
-        flex-direction: column;
+        @include flexCol;
         .ingridient {
-          width: 90px;
-          height: 90px;
-          border-radius: 50%;
+          @include ingridientSize;
           box-shadow: 0 1rem 3rem 0 $boxshadowTime;
           &:hover {
             @include hoverTransform;
@@ -64,13 +60,13 @@
           font-family: "Alegreya Bold";
           font-size: 1.8rem;
           letter-spacing: 0.05em;
-          color: #a4805f;
+          color: $ingridientHeaderColor;
           padding-top: 1rem;
         }
         .ingridient-subscription {
           font-family: "ProximaNova Regular";
           font-size: 0.9rem;
-          color: #7e7a72;
+          color: $inridientHeaderSubscription;
         }
         .ingridient-second {
           background-image: url("../../assets/img/page-fives/eggs.jpg");
@@ -81,8 +77,6 @@
         }
         .ingridient-third {
           background-image: url("../../assets/img/page-fives/chees.jpg");
-          //background-repeat: no-repeat;
-          //background-position: center;
           @include bgBanner;
         }
       }
@@ -105,29 +99,25 @@
       box-shadow: 0 1rem 3rem 0 $boxshadowTime;
     }
     .info-wrapper {
+      @include flexCol;
       position: absolute;
       width: 165px;
       height: 82%;
       top: 9%;
       left: 60%;
-      display: flex;
-      flex-direction: column;
       box-shadow: 0 1rem 3rem 0 $boxshadowTime;
-      //background: #fcfbf9b5;
       .info {
         width: 100%;
         height: 33%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flexCol;
+        @include flexCenter;
         &:nth-child(1){
-          background: #fcfbf9b5;
+          background: $infoBg;
         }
         &:nth-child(2) {
           margin-top: 0.7%;
           margin-bottom: 0.3%;
-          background: #fcfbf9b5;
+          background: $infoBg;
         }
         &:nth-child(3) {
           background: $cornerColor;
@@ -136,41 +126,36 @@
           background-image: url("../../assets/img/page-third/fild.png");
           @include bgBanner;
           .time {
-            color: #ddc791;
+            color: $timeColor;
             font-size: 5rem;
           }
         }
         .content-header-subscription {
-          color: #a4805f;
+          color: $ingridientHeaderColor;
         }
         .time {
           font-size: 4rem;
           font-family: "Alegreya Bold";
           letter-spacing: 0.05em;
           line-height: 1em;
-          color: #544f49;
+          color: $timeCookColor;
         }
         .unit {
           font-family: "Alegreya Bold";
           font-size: 1rem;
-          color: #a09b93;
+          color: $unitColor;
           letter-spacing: 0.08em;
         }
 
       }
     }
     .btn-recipe {
+      @include btnStyle;
       padding: 1.2rem;
-      border: 1px solid #ddc791;
-      font-family: "Alegreya Bold";
-      font-size: 1.2rem;
+      border: 1px dashed $timeColor;
       letter-spacing: 0.1em;
-      color: #ddc791;
-      text-transform: uppercase;
-      border-style: dashed;
+      color: $timeColor;
       background: white;
-      outline: inherit;
-      cursor: pointer;
       position: absolute;
       top: 81%;
       left: 5%;

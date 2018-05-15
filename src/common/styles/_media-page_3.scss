@@ -18,7 +18,7 @@
       left: 10%;
       box-shadow: -1rem 2rem 10rem 0 $boxshadowTime;
       .pancake-description {
-        background-size: 55% ;
+        background-size: 55%;
         .description {
           margin-top: 3rem;
           width: 90%;
@@ -29,8 +29,7 @@
           margin-top: 6rem;
         }
         .slider {
-          width: 120px;
-          height: 120px;
+          @include sliderSizeMedia;
         }
       }
     }
@@ -75,6 +74,9 @@
          .content-header {
            font-size: 2.5rem;
          }
+         .content-header-subscription {
+           font-size: 0.8rem;
+         }
          .description {
            font-size: 0.5rem;
            margin-top: 1rem;
@@ -85,12 +87,10 @@
            margin-top: 2rem;
          }
          .slider {
-           width: 50px;
-           height: 50px;
+           @include roundSizeMedia;
          }
          .pager {
-           width: 25px;
-           height: 25px;
+           @include pagerSizeMedia;
            font-size: 1.5rem;
            align-items: flex-end;
            border: 1px solid;

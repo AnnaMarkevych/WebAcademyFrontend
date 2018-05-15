@@ -1,10 +1,3 @@
-$folderWidth: 60px;
-$pagerColor: #999997;
-$cornerColor: #ffffff;
-$boxshadowTime: #c2b5ae;
-$hoverPagerColor: #978869;
-
-
 .page-banner {
   background-image: url("../../assets/img/page-third/page-3.jpg");
   @include bgBanner;
@@ -13,36 +6,30 @@ $hoverPagerColor: #978869;
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  //.page-content {
-  //  //@include bgGradienPageSecond;
-    //position: relative;
-  //  height: 100vh;
-  //}
-    .pancake {
-      width: 30%;
-      height: 70%;
-      position: absolute;
-      top: 18%;
-      left: 15%;
-      @include bgBanner;
-      background-image: url("../../assets/img/page-third/pancake.jpg");
-      @include corner;
-      //position: relative;
+  .pancake {
+    @include corner;
+    @include bgBanner;
+    background-image: url("../../assets/img/page-third/pancake.jpg");
+    position: absolute;
+    top: 18%;
+    left: 15%;
+    width: 30%;
+    height: 70%;
     }
-    .stars {
-      width: 40px;
-      height: 50%;
-      margin-left: 2rem;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      & > img {
+  .stars {
+    width: 40px;
+    height: 50%;
+    margin-left: 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    & > img {
         display: block;
         width: 60%;
         margin-top: 1rem;
       }
     }
-    .corner {
+  .corner {
       position: absolute;
       top: calc(100% - 60px);
       left: 0;
@@ -73,19 +60,15 @@ $hoverPagerColor: #978869;
         margin-top: 5rem;
       }
       .slideshow {
-        width: 100%;
-        height: 30%;
-        display: flex;
-        flex-direction: row;
+        @include flexRow;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        height: 30%;
         margin-top: 4rem;
       }
       .slider {
-        width: 90px;
-        height: 90px;
-        border: 1px solid $cornerColor;
-        border-radius: 50%;
+        @include sliderStyle;
       }
       .slider-first {
         background-image: url("../../assets/img/page-third/slide1.jpg");
@@ -103,9 +86,7 @@ $hoverPagerColor: #978869;
         background-position-y: 60%;
       }
       .pager {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
+        @include pagerSize;
         border: 2px solid $pagerColor;
         display: flex;
         justify-content: center;
@@ -130,13 +111,12 @@ $hoverPagerColor: #978869;
     background: $cornerColor;
     box-shadow: -1rem 2rem 10rem 0 $boxshadowTime;
     .pancake-time {
+      @include  bgBanner;
+      @include flexCol;
+      align-items: center;
+      background-image: url("../../assets/img/page-third/fild.png");
       width: 100%;
       height: 100%;
-      background-image: url("../../assets/img/page-third/fild.png");
-      @include  bgBanner;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
     .content-header-subscription {
       font-size: 1.5rem;
@@ -147,12 +127,12 @@ $hoverPagerColor: #978869;
       font-family: "Alegreya Bold";
       letter-spacing: 0.05em;
       line-height: 1em;
-      color: #ddc791;
+      color: $timeColor;
     }
     .unit {
       font-family: "Alegreya Bold";
       font-size: 1.5rem;
-      color: #a09b93;
+      color: $unitColor;
       letter-spacing: 0.08em;
     }
   }
