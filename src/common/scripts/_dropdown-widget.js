@@ -1,6 +1,9 @@
-let menu = document.querySelector(".menu");
+let headerMenu = document.querySelector(".menu");
 
-dropDownWidget(menu);
+let footerMenu = document.querySelector(".footer");
+
+dropDownWidget(headerMenu);
+dropDownWidget(footerMenu);
 
 function dropDownWidget(menu) {
     let btnBurger = menu.querySelector(".menu-burger");
@@ -9,20 +12,6 @@ function dropDownWidget(menu) {
         menu.classList.toggle("opened");
         event.stopPropagation();
     });
+
 }
 
-
-
-
-let footer = document.querySelector(".footer");
-
-dropDownWidgetFooter(footer);
-
-function dropDownWidgetFooter(footer) {
-    let btnBurger = footer.querySelector(".menu-burger");
-
-    btnBurger.addEventListener("click", () => {
-        footer.classList.toggle("opened");
-        event.stopPropagation();
-    })
-}
