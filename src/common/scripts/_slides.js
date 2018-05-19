@@ -15,17 +15,17 @@ let slideArray = [
         positionY: 60
     },
     {
-        image: "slide1.jpg",
+        image: "chees.jpg",
         positionX: 0,
         positionY: 50
     },
     {
-        image: "slide1.jpg",
+        image: "corn.jpg",
         positionX: 100,
         positionY: 90
     },
     {
-        image: "slide1.jpg",
+        image: "eggs.jpg",
         positionX: 50,
         positionY: 50
     }
