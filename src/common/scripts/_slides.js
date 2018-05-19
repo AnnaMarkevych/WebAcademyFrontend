@@ -33,33 +33,44 @@ let slideArray = [
 
 widgetSlider(document.querySelector(".slideshow"), slideArray);
 
-function widgetSlider(rootEl, slides) {
-    let htmlSliders = rootEl.querySelectorAll(".slider");
-    let currentIndex = 10000000 * slides.length;
-    review(currentIndex);
 
-    let pagerButtons = rootEl.querySelectorAll(".pager");
+function widgetSlider(rootElement, objs) {
+    const arraySliders = rootElement.querySelectorAll(".slider");
+    let pagerButtons = rootElement.querySelectorAll(".pager");
+    let currentIndex = 0;
 
-    pagerButtons[0].addEventListener("click", () => {
-        currentIndex--;
-        review(currentIndex);
-    });
+    reviewAllSlides(currentIndex);
+
+    function reviewAllSlides(i) {
+        arraySliders.forEach((item) => {
+            reviewSlide(item, objs[i]);
+            i++;
+            if (i >= objs.length) {
+                i = 0;
+            }
+        })
+    }
+
+    function reviewSlide(htmlSlide, obj) {
+        htmlSlide.style.backgroundImage = "url('../../assets/images/" + obj.image + "')";
+        htmlSlide.style.backgroundPositionX = obj.positionX + "%";
+        htmlSlide.style.backgroundPositionY = obj.positionY + "%";
+    }
 
     pagerButtons[1].addEventListener("click", () => {
         currentIndex++;
-        review(currentIndex);
+        if (currentIndex >= objs.length) {
+            currentIndex = 0;
+        }
+        reviewAllSlides(currentIndex);
     });
 
-    function review(startIndex) {
-        console.log("----");
-        htmlSliders.forEach((htmlItem) => {
-            let index = startIndex % slides.length;
-            console.log(index);
-            startIndex++;
-            let slide = slides[index];
-            htmlItem.style.backgroundImage = "url('../../assets/images/" + slide.image + "')";
-            htmlItem.style.backgroundPositionX = slide.positionX + "%";
-            htmlItem.style.backgroundPositionY = slide.positionY + "%";
-       })
-    }
+    pagerButtons[0].addEventListener("click", () => {
+        currentIndex--;
+        if (currentIndex <= -1) {
+            currentIndex = objs.length - 1;
+        }
+        reviewAllSlides(currentIndex);
+    });
+
 }
