@@ -33,6 +33,7 @@
       &-item {
         padding: 0.5rem 1rem;
         align-items: center;
+        color: $menuColor;
         &:nth-child(odd):hover {
          @include hoverTransform;
         }
