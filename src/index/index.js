@@ -19,7 +19,9 @@ class TaskList {
 
         this.form = document.createElement("form");
         this.input = document.createElement("input");
+        this.input.classList.add("newTask");
         this.ul = document.createElement("ul");
+        this.ul.classList.add("list");
 
         this.form.appendChild(this.input);
 
@@ -37,10 +39,11 @@ class TaskList {
     renderOne(task){
         const  li = document.createElement('li');
         li.textContent = task.title;
+        li.classList.add("tasks");
         this.ul.appendChild(li);
 
         const button = document.createElement("button");
-        button.classList.add("btnDelete");
+        // button.classList.add("btnDelete");
         button.textContent = "X";
         button.id = task.id;
         li.appendChild(button);
@@ -57,7 +60,7 @@ class TaskList {
         const xhr = new XMLHttpRequest();
         xhr.open('DELETE', 'http://localhost:4001/list/' + id, true);
         xhr.setRequestHeader("Content-Type", "application/json");
-        debugger;
+        // debugger;
         xhr.send();
         // xhr.onreadystatechange = () => {
         //     if (xhr.readyState === 4) {
