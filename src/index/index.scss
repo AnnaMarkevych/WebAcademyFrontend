@@ -1,6 +1,7 @@
 @import '../common/styles/_libs';
-#taskList {
-
+body {
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
 }
 .taskList {
   width: 500px;
@@ -11,4 +12,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.taskTittle {
+  font-size: 100px;
+  font-weight: 100;
+  //text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+}
+.btnDelete {
+  margin-left: 10px;
 }

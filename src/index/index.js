@@ -7,13 +7,15 @@ class TaskList {
         this.render();
         this.handleEvents();
         this.fetchListData();
+        // this.cleanInput();
     }
 
     render () {
         this.rootElement.classList.add("taskList");
 
         const tittle = document.createElement("h1");
-        tittle.textContent = "Task List";
+        tittle.textContent = "todos";
+        tittle.classList.add("taskTittle");
 
         this.form = document.createElement("form");
         this.input = document.createElement("input");
@@ -36,6 +38,36 @@ class TaskList {
         const  li = document.createElement('li');
         li.textContent = task.title;
         this.ul.appendChild(li);
+
+        const button = document.createElement("button");
+        button.classList.add("btnDelete");
+        button.textContent = "X";
+        button.id = task.id;
+        li.appendChild(button);
+
+        button.addEventListener("click",()=>{
+            const id = button.id;
+            this.deleteTask(id);
+            li.remove();
+        })
+    }
+
+
+    deleteTask(id) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('DELETE', 'http://localhost:4001/list/' + id, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        debugger;
+        xhr.send();
+        // xhr.onreadystatechange = () => {
+        //     if (xhr.readyState === 4) {
+        //         if (xhr.status === 200) {
+        //             this.renderOne(JSON.parse(xhr.response));
+        //         } else {
+        //             console.error(xhr.status, xhr.statusText);
+        //         }
+        //     }
+        // };
     }
 
     handleEvents() {
@@ -49,6 +81,7 @@ class TaskList {
         const reguestBody = {
             title: this.input.value
         };
+        this.cleanInput();
         const xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://localhost:4001/list', true);
         xhr.setRequestHeader("Content-Type", "application/json");
@@ -65,7 +98,6 @@ class TaskList {
         // console.log(reguestBody);
     }
 
-
     fetchListData() {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', 'http://localhost:4001/list', true);
@@ -79,6 +111,11 @@ class TaskList {
                 }
             }
         };
+    }
+
+    cleanInput() {
+        this.input.value = "";
+        console.log("Clean input!");
     }
 
 }
