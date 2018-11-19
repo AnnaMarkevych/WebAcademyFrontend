@@ -24,6 +24,7 @@ body {
 }
 .btnDelete {
   //margin-left: 10px;
+  //justify-content: right;
 }
 li {
   list-style: none;
@@ -44,28 +45,118 @@ ul {
 }
 form {
   width: 500px;
+  display: flex;
+  flex-direction: row;
 }
 input {
   outline: inherit;
-  width: 100%;
+  //width: 100%;
   border: none;
 }
 .newTask {
-  padding: 16px 16px 16px 60px;
-  font-size: 1.2rem;
-  background: rgba(0, 0, 0, 0.003);
+  width: 90%;
+  padding: 16px 0 16px 5px;
+  font-size: 1.5rem;
+  font-style: normal;
+  background: white;
+  //background: rgba(0, 0, 0, 0.003);
   //box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
   border: 1px solid #9999994f;
-  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
-  color: rgba(77, 77, 80, 1);
-}
-.tasks {
-  padding: 15px 15px 15px 60px;
-  font-size: 1.2rem;
-  background: rgba(0, 0, 0, 0.003);
-  border: 1px solid #9999994f;
-  border-top: none;
+  border-left: none;
   //box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
   color: rgba(77, 77, 80, 1);
 }
 
+
+//input::-moz-placeholder { color: red; }
+input::-webkit-input-placeholder {
+  color: #e6e6e6;
+  font-style: italic;
+}
+
+.tasks {
+  padding: 15px 10px 15px 0px;
+  font-size: 1.2rem;
+  background: white;
+  //background: rgba(0, 0, 0, 0.003);
+  border: 1px solid #9999994f;
+  border-top: none;
+  //border-left: none;
+  //box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  color: #4d4d50b5;
+}
+
+.checkAll {
+  width: 10%;
+  //height: 30px;
+  background: white;
+  border: 1px solid #9999994f;
+  border-right: none;
+  color: rgba(77, 77, 80, 1);
+  //padding: 16px 16px 16px 0px;
+  font-size: 1.5rem;
+  font-style: normal;
+  //margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkboxAll {
+  display: none;
+}
+.checkboxAllCustom {
+  border: 1px solid #e6e6e6;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 1.3rem;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //width: 20px;
+  //height: 20px;
+}
+.checkboxAll:checked + .checkboxAllCustom {
+  color: rgba(77, 77, 80, 1);
+}
+.labelLi {
+  width: 10%;
+  //height: 30px;
+  background: white;
+  //border: 1px solid #9999994f;
+  //border-right: none;
+  color: rgba(77, 77, 80, 1);
+  //padding: 16px 16px 16px 0px;
+  font-size: 1.5rem;
+  font-style: normal;
+  //margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titleTask {
+  width: 85%;
+  text-align: left;
+}
+
+.checkboxLi {
+  display: none;
+}
+
+.checkboxLiCustom {
+  border: 1px solid #e6e6e6;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 1.1rem;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkboxLi:checked + .checkboxLiCustom {
+  color: rgba(113, 202, 185, 1);
+}

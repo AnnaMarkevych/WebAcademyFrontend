@@ -18,16 +18,35 @@ class TaskList {
         tittle.classList.add("taskTittle");
 
         this.form = document.createElement("form");
+
+        this.label = document.createElement("label");
+        this.label.classList.add("checkAll");
+
+        this.checkboxAll = document.createElement("input");
+        this.checkboxAll.type = "checkbox";
+        this.checkboxAll.classList.add("checkboxAll");
+
+        this.checkboxAllCustom = document.createElement("div");
+        this.checkboxAllCustom.textContent = "✔";
+        this.checkboxAllCustom.classList.add("checkboxAllCustom");
+
         this.input = document.createElement("input");
         this.input.classList.add("newTask");
+        this.input.placeholder = "What needs to be done?";
         this.ul = document.createElement("ul");
         this.ul.classList.add("list");
 
+        this.form.appendChild(this.label);
         this.form.appendChild(this.input);
+        this.label.appendChild(this.checkboxAll);
+        this.label.appendChild(this.checkboxAllCustom);
 
         this.rootElement.appendChild(tittle);
         this.rootElement.appendChild(this.form);
         this.rootElement.appendChild(this.ul);
+
+
+        // checkAll.textContent = "☑";
     }
 
     renderList(taskList) {
@@ -38,13 +57,32 @@ class TaskList {
 
     renderOne(task){
         const  li = document.createElement('li');
-        li.textContent = task.title;
         li.classList.add("tasks");
+
+        this.labelLi = document.createElement("label");
+        this.labelLi.classList.add("labelLi");
+
+        this.titleTask = document.createElement("div");
+        this.titleTask.classList.add("titleTask");
+        this.titleTask.textContent = task.title;
+
+        this.checkboxLi = document.createElement("input");
+        this.checkboxLi.type = "checkbox";
+        this.checkboxLi.classList.add("checkboxLi");
+
+        this.checkboxLiCustom = document.createElement("div");
+        this.checkboxLiCustom.textContent = "✓";
+        this.checkboxLiCustom.classList.add("checkboxLiCustom");
+
         this.ul.appendChild(li);
+        li.appendChild(this.labelLi);
+        li.appendChild(this.titleTask);
+        this.labelLi.appendChild(this.checkboxLi);
+        this.labelLi.appendChild(this.checkboxLiCustom);
 
         const button = document.createElement("button");
         // button.classList.add("btnDelete");
-        button.textContent = "X";
+        button.textContent = "✖";
         button.id = task.id;
         li.appendChild(button);
 
