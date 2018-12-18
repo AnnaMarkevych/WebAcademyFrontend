@@ -22,7 +22,14 @@ body {
   font-weight: 100;
   color: rgba(175, 47, 47, 0.15);
 }
+
 .btnDelete {
+  background: none;
+  outline: inherit;
+  border: none;
+  padding: 0;
+  color: transparent;
+  font-size: 1.1rem;
   //margin-left: 10px;
   //justify-content: right;
 }
@@ -68,6 +75,7 @@ input {
 }
 
 
+
 //input::-moz-placeholder { color: red; }
 input::-webkit-input-placeholder {
   color: #e6e6e6;
@@ -75,7 +83,7 @@ input::-webkit-input-placeholder {
 }
 
 .tasks {
-  padding: 15px 10px 15px 0px;
+  padding: 15px 20px 15px 0px;
   font-size: 1.2rem;
   background: white;
   //background: rgba(0, 0, 0, 0.003);
@@ -84,6 +92,18 @@ input::-webkit-input-placeholder {
   //border-left: none;
   //box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
   color: #4d4d50b5;
+  &:hover {
+    .btnDelete {
+      transition: color 1s;
+      color: rgba(175, 47, 47, 0.66);
+    }
+  }
+  //&:focus {
+  //  .btnDelete {
+  //    transition: color 1s;
+  //    color: rgba(175, 47, 47, 0.66);
+  //  }
+  //}
 }
 
 .checkAll {
@@ -117,6 +137,9 @@ input::-webkit-input-placeholder {
   align-items: center;
   //width: 20px;
   //height: 20px;
+}
+.hidden.checkboxAllCustom {
+  display: none;
 }
 .checkboxAll:checked + .checkboxAllCustom {
   color: rgba(77, 77, 80, 1);
@@ -159,4 +182,5 @@ input::-webkit-input-placeholder {
 
 .checkboxLi:checked + .checkboxLiCustom {
   color: rgba(113, 202, 185, 1);
+  border: 1px solid #71cab9;
 }

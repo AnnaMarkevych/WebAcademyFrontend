@@ -26,10 +26,6 @@ class TaskList {
         this.checkboxAll.type = "checkbox";
         this.checkboxAll.classList.add("checkboxAll");
 
-        this.checkboxAllCustom = document.createElement("div");
-        this.checkboxAllCustom.textContent = "✔";
-        this.checkboxAllCustom.classList.add("checkboxAllCustom");
-
         this.input = document.createElement("input");
         this.input.classList.add("newTask");
         this.input.placeholder = "What needs to be done?";
@@ -39,20 +35,23 @@ class TaskList {
         this.form.appendChild(this.label);
         this.form.appendChild(this.input);
         this.label.appendChild(this.checkboxAll);
+
+        this.checkboxAllCustom = document.createElement("div");
+        this.checkboxAllCustom.textContent = "✔";
+        this.checkboxAllCustom.classList.add("checkboxAllCustom");
+        this.checkboxAllCustom.classList.add("hidden");
         this.label.appendChild(this.checkboxAllCustom);
 
         this.rootElement.appendChild(tittle);
         this.rootElement.appendChild(this.form);
         this.rootElement.appendChild(this.ul);
-
-
-        // checkAll.textContent = "☑";
     }
 
     renderList(taskList) {
         taskList.forEach((task) => {
             this.renderOne(task);
-        })
+        });
+        this.renderCheckboxAll();
     }
 
     renderOne(task){
@@ -66,30 +65,36 @@ class TaskList {
         this.titleTask.classList.add("titleTask");
         this.titleTask.textContent = task.title;
 
-        this.checkboxLi = document.createElement("input");
-        this.checkboxLi.type = "checkbox";
-        this.checkboxLi.classList.add("checkboxLi");
+        const checkboxLi = document.createElement("input");
+        checkboxLi.type = "checkbox";
+        checkboxLi.classList.add("checkboxLi");
 
         this.checkboxLiCustom = document.createElement("div");
         this.checkboxLiCustom.textContent = "✓";
         this.checkboxLiCustom.classList.add("checkboxLiCustom");
 
+        this.checkboxLiCustom.addEventListener("click", ()=> {
+            const checked = checkboxLi.checked;
+            console.log(checked);
+            // debugger;
+            this.completedTask(task.id, checked);
+        });
+
         this.ul.appendChild(li);
         li.appendChild(this.labelLi);
         li.appendChild(this.titleTask);
-        this.labelLi.appendChild(this.checkboxLi);
+        this.labelLi.appendChild(checkboxLi);
         this.labelLi.appendChild(this.checkboxLiCustom);
 
         const button = document.createElement("button");
-        // button.classList.add("btnDelete");
+        button.classList.add("btnDelete");
         button.textContent = "✖";
-        button.id = task.id;
         li.appendChild(button);
 
-        button.addEventListener("click",()=>{
-            const id = button.id;
-            this.deleteTask(id);
+        button.addEventListener("click",()=> {
+            this.deleteTask(task.id);
             li.remove();
+            this.renderCheckboxAll();
         })
     }
 
@@ -131,6 +136,7 @@ class TaskList {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     this.renderOne(JSON.parse(xhr.response));
+                    this.renderCheckboxAll();
                 } else {
                     console.error(xhr.status, xhr.statusText);
                 }
@@ -157,6 +163,22 @@ class TaskList {
     cleanInput() {
         this.input.value = "";
         console.log("Clean input!");
+    }
+    renderCheckboxAll() {
+        // debugger;
+        if (this.ul.childElementCount > 0) {
+            this.checkboxAllCustom.classList.remove("hidden");
+        } else {
+            this.checkboxAllCustom.classList.add("hidden");
+        }
+    }
+
+    completedTask(id, completed) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('PUT', 'http://localhost:4001/list/' + id + completed, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        // debugger;
+        xhr.send();
     }
 
 }
