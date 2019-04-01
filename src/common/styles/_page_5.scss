@@ -76,9 +76,22 @@
           background-size: 150%;
         }
         .ingridient-third {
+          background-image: url("../../assets/img/page-third/slide1.jpg");
+          @include bgBanner;
+        }
+        .ingridient-third {
           background-image: url("../../assets/img/page-fives/chees.jpg");
           @include bgBanner;
         }
+        .ingridient-third {
+          background-image: url("../../assets/img/page-third/slide2.jpg");
+          @include bgBanner;
+        }
+        .ingridient-third {
+          background-image: url("../../assets/img/page-third/slide3.jpg");
+          @include bgBanner;
+        }
+
       }
     }
   }
